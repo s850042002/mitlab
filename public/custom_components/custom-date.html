@@ -1,0 +1,28 @@
+<polymer-element name="custom-date" noscript>
+	<template>
+		<style>
+		:host {
+			font-weight: 300;
+		}
+    .date{
+      display: block;
+      padding: 3px;
+      background-color: #56BA89;
+      color: white;
+      overflow: hidden;
+      height: 64px;
+      width: 64px;
+    }
+		polyfill-next-selector { content: '.date h5'; }
+		.date ::content h4 {
+			margin: 0;
+		}
+		</style>
+
+		<div class="date" vertical center-justified center layout>
+			<content select="h4"></content>
+			<content select="h4"></content>
+			<content select="h4"></content>
+		</div>
+	</template>
+</polymer-element>

@@ -1,0 +1,44 @@
+<polymer-element name="news-list" noscript>
+	<template>
+		<style>
+		:host {
+			font-weight: 300;
+			cursor: default;
+		}
+		core-list{
+			height: 100%;
+		}
+		.item {
+			overflow: hidden;
+			padding: 20px;
+			margin-bottom: 10px;
+			display: block;
+			background-color: white;
+			box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+		}
+		.time{
+			display: block;
+			margin-top: 18px;
+			font-size: 0.7rem;
+			font-weight: 300;
+		}
+		.subject{
+			font-weight: 600;
+		}
+		.selected {
+			background: #e0e0e0;
+		}
+		</style>
+		<post-service posts="{{data}}" url="news.json"></post-service>
+		<core-list id="list" data="{{data}}">
+			<template>
+				<div class="item {{ {selected: selected} | tokenList }}" layout horizontal center>
+					<div class="subject" layout vertical flex>{{model.subject}}
+						<div class="content">{{model.content}}</div>
+						<div self-end class="time">{{model.time}}</div>
+					</div>
+				</div>
+			</template>
+		</core-list>
+	</template>
+</polymer-element>

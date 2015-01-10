@@ -1,0 +1,39 @@
+<polymer-element name="member-card" noscript>
+	<template>
+		<style>
+		:host {
+			display: block;
+			position: relative;
+			background-color: white;
+			padding: 10px;
+			width: 100%;
+			font-weight: 300;
+			box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+		}
+		.card-header {
+			margin-bottom: 20px;
+		}
+		polyfill-next-selector { content: '.card-header h2'; }
+		.card-header ::content h2 {
+			margin: 0;
+			font-size: 1.8rem;
+			font-weight: 300;
+		}
+		polyfill-next-selector { content: '.card-header img'; }
+		.card-header ::content img {
+			width: 70px;
+			border-radius: 50%;
+			margin: 10px;
+		}
+		</style>
+
+		<!-- CARD CONTENTS GO HERE -->
+		<div class="card-header" layout horizontal center>
+			<content select="img"></content>
+			<content select="h2"></content>
+		</div>
+		<p>研究: <content select="span.study"></content></p>
+		<p>學年: <content select="span.year"></content></p>
+		<p>E-mail: <content select="span.email"></content></p>
+	</template>
+</polymer-element>

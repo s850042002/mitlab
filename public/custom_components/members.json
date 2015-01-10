@@ -1,0 +1,335 @@
+[  
+  {
+    "membername" : "鄭自凱 WILLIAM CHENG",
+	"email" : "D9602205@mail.ntust.edu.tw",
+	"id" : "master",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-02.svg",
+	"year" : "96",
+    "other" : ""
+  },
+  {
+    "membername" : "林暐翔",
+	"email" : "D9902101@mail.ntust.edu.tw",
+	"id" : "master",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-03.svg",
+	"year" : "99",
+    "other" : ""
+  },
+  {
+    "membername" : "游敏杰",
+	"email" : "D10002103@mail.ntust.edu.tw",
+	"id" : "master",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-04.svg",
+	"year" : "100",
+    "other" : ""
+  },
+  {
+    "membername" : "蘇冠武",
+	"email" : "D10002103@mail.ntust.edu.tw",
+	"id" : "master",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-05.svg",
+	"year" : "100",
+    "other" : ""
+  },
+  {
+    "membername" : "呂定宸",
+	"email" : "M10002907@mail.ntust.edu.tw",
+	"id" : "master",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-06.svg",
+	"year" : "100",
+    "other" : ""
+  },
+  {
+    "membername" : "周楹彬",
+	"email" : "M10002924@mail.ntust.edu.tw",
+	"id" : "master",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-07.svg",
+	"year" : "100",
+    "other" : ""
+  },
+  {
+    "membername" : "陳柏全",
+	"email" : "M10202101@mail.ntust.edu.tw",
+	"id" : "master",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-08.svg",
+	"year" : "102",
+    "other" : ""
+  },
+  {
+    "membername" : "吳旻穎",
+	"email" : "houseuse616@hotmail.com",
+	"id" : "master",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-09.svg",
+	"year" : "102",
+    "other" : ""
+  },
+  {
+    "membername" : "陳逸翔",
+	"email" : "jeremy90122@gmail.com",
+	"id" : "master",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-10.svg",
+	"year" : "102",
+    "other" : ""
+  },
+  {
+    "membername" : "詹佳芸",
+	"email" : "erti627@hotmail.com",
+	"id" : "master",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-11.svg",
+	"year" : "102",
+    "other" : ""
+  },
+  {
+    "membername" : "黃致嘉",
+	"email" : "M10202102@mail.ntust.edu.tw",
+	"id" : "master",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-12.svg",
+	"year" : "102",
+    "other" : ""
+  },
+  {
+    "membername" : "JAIME MORA",
+	"email" : "M9802804@mail.ntust.edu.tw",
+	"id" : "master",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-13.svg",
+	"year" : "98",
+    "other" : ""
+  },
+  {
+    "membername" : "邱靖倢",
+	"email" : "B9902006@mail.ntust.edu.tw",
+	"id" : "college",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-14.svg",
+	"year" : "99",
+    "other" : ""
+  },
+  {
+    "membername" : "陳柏翰",
+	"email" : "B9902226@mail.ntust.edu.tw",
+	"id" : "college",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-15.svg",
+	"year" : "99",
+    "other" : ""
+  },
+  {
+    "membername" : "胡德康",
+	"email" : "M9802804@mail.ntust.edu.tw",
+	"id" : "college",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-16.svg",
+	"year" : "99",
+    "other" : ""
+  },
+  {
+    "membername" : "薛乃榮",
+	"email" : "M9802804@mail.ntust.edu.tw",
+	"id" : "college",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-01.svg",
+	"year" : "99",
+    "other" : ""
+  },
+  { 
+    "membername" : "林木盛",
+	"email" : "amoos.lin@gmail.com",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-02.svg",
+	"year" : "100畢",
+    "other" : ""
+  },
+  {
+    "membername" : "林傳根",
+	"email" : "M9602122@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-03.svg",
+	"year" : "97畢",
+    "other" : ""
+  },
+  {
+    "membername" : "黃銘宏",
+	"email" : "M9602124@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-04.svg",
+	"year" : "97畢",
+    "other" : ""
+  },
+  {
+    "membername" : "陳聖甫",
+	"email" : "M9702126@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-05.svg",
+	"year" : "98畢",
+    "other" : ""
+  },
+  {
+    "membername" : "俞詠善",
+	"email" : "M9702801@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-06.svg",
+	"year" : "98畢",
+    "other" : ""
+  },
+  {
+    "membername" : "岳孝權",
+	"email" : "M9802117@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-07.svg",
+	"year" : "98畢",
+    "other" : ""
+  },
+  {
+    "membername" : "陳威霖",
+	"email" : "M9802123@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-08.svg",
+	"year" : "99畢",
+    "other" : ""
+  },
+  {
+    "membername" : "曾泓傑",
+	"email" : "M9802138@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-09.svg",
+	"year" : "98畢",
+    "other" : ""
+  },
+  {
+    "membername" : "石欣玉",
+	"email" : "M9902105@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-10.svg",
+	"year" : "100畢",
+    "other" : ""
+  },
+  {
+    "membername" : "陳政宗",
+	"email" : "M9902131@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-11.svg",
+	"year" : "100畢",
+    "other" : ""
+  },
+  {
+    "membername" : "陳其灃",
+	"email" : " M9902124@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-12.svg",
+	"year" : "100畢",
+    "other" : ""
+  },
+  {
+    "membername" : "N. H. TUNG",
+	"email" : "M9902805@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-13.svg",
+	"year" : "100畢",
+    "other" : ""
+  },
+  {
+    "membername" : "林正宏",
+	"email" : "M10002106@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-14.svg",
+	"year" : "101畢",
+    "other" : ""
+  },
+  {
+    "membername" : "陳政輝",
+	"email" : "M9902146@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-15.svg",
+	"year" : "101畢",
+    "other" : ""
+  },
+  {
+    "membername" : "李坤翰",
+	"email" : "M9902145@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-16.svg",
+	"year" : "101畢",
+    "other" : ""
+  },
+  {
+    "membername" : "劉醇曜",
+	"email" : "M10002123@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-01.svg",
+	"year" : "101畢",
+    "other" : ""
+  },
+  {
+    "membername" : "欒自雨",
+	"email" : " RAINLUAN@gmail.com",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-02.svg",
+	"year" : "101畢",
+    "other" : ""
+  },
+  {
+    "membername" : "朱天瑜",
+	"email" : "M10102117@mail.ntust.edu.tw",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-03.svg",
+	"year" : "102畢",
+    "other" : ""
+  },
+  {
+    "membername" : "江東鴻",
+	"email" : "pushadon@gmail.com",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-04.svg",
+	"year" : "102畢",
+    "other" : ""
+  },
+  {
+    "membername" : "朱哲儀",
+	"email" : "pk2797001@hotmail.com",
+	"id" : "graduated",
+	"study" : "You don't wanna know",
+    "avatar" : "images/avatar-05.svg",
+	"year" : "102畢",
+    "other" : ""
+  },
+  {
+    "membername" : "Johnny",
+	"email" : "s850042002@gmail.com",
+	"id" : "graduated",
+	"study" : "IMS and Web technique",
+    "avatar" : "images/avatar-06.svg",
+	"year" : "102畢",
+    "other" : ""
+  }
+]

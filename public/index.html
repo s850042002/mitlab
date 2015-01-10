@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>MITLAB</title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+
+  <link rel="import" href="bower_components/polymer/polymer.html">
+  <link rel="import" href="bower_components/font-roboto/roboto.html">
+
+  <link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
+  <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="bower_components/core-menu/core-menu.html">
+  <link rel="import" href="bower_components/core-item/core-item.html">
+  <link rel="import" href="bower_components/core-icons/core-icons.html">
+  <link rel="import" href="bower_components/core-icons/communication-icons.html">
+  <link rel="import" href="bower_components/core-icons/av-icons.html">
+  <link rel="import" href="bower_components/core-icons/image-icons.html">
+  <link rel="import" href="bower_components/core-icons/social-icons.html">
+  <link rel="import" href="bower_components/core-icons/editor-icons.html">
+  <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+  <link rel="import" href="bower_components/core-list/core-list.html">
+
+  <link rel="import" href="custom_components/lab-content.html">
+
+  <style>
+	html,body {
+		font-family: "RobotoDraft",Helvetica,Arial,sans-serif;
+	}
+	a{
+		text-decoration: none;
+	}
+	core-header-panel {
+		height: 100%;
+		background-color: #ffffff;
+	}
+	core-menu{
+		font-weight: 300;
+		font-size: 120%;
+	}
+	core-item{
+		margin-bottom: 20px;
+	}
+	core-icon{
+		color: #56BA89;
+	}
+	#navheader {
+		background-color: #000000;
+		color: #ffffff;
+		font-weight: 700;
+	}
+	#mainheader {
+		background-color: #159EB6;
+		color: #ffffff;
+		font-weight: 500;
+		font-size: 150%;
+	}
+	#lab-title{
+		font-size: 1.6rem;
+		font-weight: 700;
+	}
+	core-drawer-panel:not([narrow]) #navicon {
+		display: none;
+	}
+
+  </style>
+</head>
+
+<body fullbleed>
+	<core-drawer-panel id="drawerPanel">
+		<core-header-panel drawer mode="seamed">
+			<core-toolbar id="navheader">
+				<span id="lab-title">MITLAB</span>
+			</core-toolbar>
+			<core-menu selected="0">
+				<core-item class="menu-item" icon="info" label="About us"></core-item>
+				<core-item class="menu-item" icon="av:news" label="News"></core-item>
+				<core-item class="menu-item" icon="image:portrait" label="Professor" on-tap="{{onTapped}}"></core-item>
+				<core-item class="menu-item" icon="social:group" label="Members"></core-item>
+				<core-item class="menu-item" icon="social:public" label="Publications"></core-item>
+				<core-item class="menu-item" icon="work" label="Projects"></core-item>
+				<core-item class="menu-item" icon="communication:contacts" label="Contacts"></core-item>
+			</core-menu>
+		</core-header-panel>
+
+		<core-header-panel main mode="seamed">
+			<core-toolbar id="mainheader">
+				<paper-icon-button id="navicon" icon="menu"></paper-icon-button>
+				<core-item id="toolbar-title" icon="info" label="About us"></core-item>
+			</core-toolbar>
+			<lab-content show="About us"></lab-content>
+		</core-header-panel>
+	</core-drawer-panel>
+	<script>
+		document.addEventListener('polymer-ready', function() {
+			var coredrawerpanel = document.querySelector('core-drawer-panel');
+			var labcontent = document.querySelector('lab-content');
+			var toolbartitle = document.getElementById('toolbar-title');
+			var drawerPanel = document.getElementById('drawerPanel');
+			var menuitem = document.querySelectorAll('.menu-item');
+
+			for(i=0; i<menuitem.length; i++){
+				menuitem[i].addEventListener('click', function() {
+					coredrawerpanel.togglePanel();
+					labcontent.show = this.label;
+					toolbartitle.label = this.label;
+					toolbartitle.icon = this.icon;
+				});
+			}
+			var navicon = document.getElementById('navicon');
+			navicon.addEventListener('click', function() {
+				drawerPanel.togglePanel();
+			});
+		});
+	</script>
+</body>
+
+</html>
