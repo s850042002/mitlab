@@ -1,273 +1,46 @@
-<link rel="import" href="professor-card.html">
-<link rel="import" href="member-card.html">
-<link rel="import" href="paper-card.html">
-<link rel="import" href="project-cards.html">
-<link rel="import" href="contact-card.html">
-<link rel="import" href="post-service.html">
-<link rel="import" href="custom-date.html">
+<link rel="import" href="about-page.html">
 <link rel="import" href="news-list.html">
+<link rel="import" href="professor-page.html">
+<link rel="import" href="member-page.html">
+<link rel="import" href="paper-page.html">
+<link rel="import" href="project-page.html">
+<link rel="import" href="contact-page.html">
 
-<polymer-element name="lab-content" attributes="show">
+<polymer-element name="lab-content" attributes="show" noscript>
 	<template>
 		<style>
-		:host {
-			display: block;
-			font-size: 1em;
-			font-weight: 500;
-			font-family: "RobotoDraft",Helvetica,Arial,sans-serif;
-			width: 100%;
-		}
-		custom-date{
-		  margin-right: 30px;
-		  position: relative;
-		}
-		paper-tabs::shadow #selectionBar{
-			background-color: #56BA89;
-		}
-		paper-tab::shadow #ink {
-			color: #56BA89;
-		}
-		member-card {
-			width: 80%;
-			margin: 0 auto;
-			margin-top: 10px;
-		}
-		professor-card {
-			width: 80%;
-			margin: 0 auto;
-			margin-top: 10px;
-		}
-		paper-card {
-			width: 80%;
-			margin: 0 auto;
-			margin-top: 10px;
-		}
-		contact-card {
-			width: 80%;
-			margin: 0 auto;
-			margin-top: 20px;
-		}
-
-		.professor-info{
-		  width: 80%;
-		  margin: 0 auto;
-		  margin-top: 20px;
-		  padding: 10px;
-			border-radius: 5px;
-			box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
-		}
-		.info {
-			padding: 10px;
-		}
-		.small-icon{
-			color: #6B5344;
-			width: 16px;
-			height: 16px;
-			margin-right: 3px;
-			margin-left: 7px;
-		}
-		.research-title{
-			color: #6B5344;
-			font-size: 1.2em;
-			font-weight: 900;
-		}
-		.research-content{
-			margin-bottom: 20px;
-			padding: 10px;
-			border-radius: 5px;
-			box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
-		}
-		.duration{
-		  margin-top: 10px;
-		  font-size: 0.7rem;
-		}
-		#lab-title{
-			color: #6B5344;
-			font-size: 1.6em;
-			font-weight: 900;
-		}
-		#border{
-			border-bottom: 1px #6B5344 solid;
-			margin-top: 30px;
-			margin-bottom: 20px;
-		}
-
+			:host {
+				display: block;
+				font-size: 1em;
+				font-weight: 500;
+				font-family: "RobotoDraft",Helvetica,Arial,sans-serif;
+				width: 100%;
+			}
+			.info {
+				padding: 10px;
+			}
 		</style>
 
 		<div id="about-us" class="info" hidden?="{{show != 'About us'}}">
-			<core-item id="lab-title" label="NTUST MIT Laboratory"></core-item>
-			<p>本實驗室位於台灣科技大學電資大樓EE705-6，現有專題生4名，碩士生11位，博士班2位。</p>
-			<p>實驗室會定期聚餐、舉辦活動，學習風氣良好，相處氣氛融洽，實驗室環境佳，並積極發表研究論文，與參加國內外研討會。</p>
-			<p>歡迎對行動通訊系統、居家感測照護系統、雲端整合系統等相關領域有興趣的有志青年加入。</p>
-			<div id="border"></div>
-			<div vertical layout>
-				<div class="research-content">
-					<core-item class="research-title" icon="grade" label="行動通訊服務系統"></core-item>
-					<p>由於無線通訊技術的進展，在後語音服務時代，繼之而起的行動服務逐漸受到注意。典型的無線行動服務主要包含三部分：服務、使用者端設備及網路。於異質網路上建置行動寬頻服務，過去相關研究大多著重於單一服務設計問題，而我們著力於研究面對服務整合及可擴充性的問題，於是我們著力於研究探討實務架構中每一元件之互動時，例如： TRASS、SPONGE等系統，並實際提出可實現之行動通訊服務系統，例如行動監控系統，此外亦關注智慧型手機用戶端的能耗問題。</p>
-				</div>
-				<div class="research-content">
-					<core-item class="research-title" icon="grade" label="異質網路整合議題"></core-item>
-					<p>為提供更有效率的無線數據接取服務,不同的無線網路彼此間互補以提供更高的無線接取率，多個異質網路整合於同一個網路服務群組將使其間彼此互動的關係更加複雜，過去相關研究大多著重於前端使用者之使用效能，而我們著力於研究當一個業者提供多種接取技術後，所面臨到要如何在一條且有限頻寬資源的骨幹網路中有效且公平的管理這些龐大的網路流量希望達成有效分配使用者的服務請求、縮短使用者的服務請求的完成時間，並同時提升骨幹網路的使用率，延展志當今的物聯網系統，我們亦關注於異質訊息於物聯網上傳遞之穩定性問題。</p>
-				</div>
-				<div class="research-content">
-					<core-item class="research-title" icon="grade" label="分散資源與分享策略"></core-item>
-					<p>點對點網路與雲端系統在最近幾年已被廣泛地應用在分散式資源共享。資源或資訊搜尋是首要的挑戰，包括冗長的搜尋時間、大量的重複訊息與較低的成功率。另一方面、點對點網路下最受歡迎的應用即是做檔案分享。過去相關研究大多著重於熱門資源的搜尋且不考慮點對點網路下的節點的分享速度。現今由於異質網路的快速發展使得節點間的傳輸情況多變，於是我們著力於研究探討異質點對點網路節點間的資源找尋與檔案分享效能。</p>
-				</div>
-				<div class="research-content">
-					<core-item class="research-title" icon="grade" label="感測網路相關議題"></core-item>
-					<p>感測網路已廣泛應至生活，近年來更跨不同領域而整合應用，這方面之研究除了協定上在不同領域應有所調整之探究外，更深入走向立體實務情境下感測網路之研究，及移動式結點的感測網路效能之研究。</p>
-				</div>
-			</div>
+			<about-page></about-page>
         </div>
-		<div id="news" class="info" hidden?="{{show != 'News'}}" fit>
-			<news-list></new-list>
+		<div id="news" class="info" hidden?="{{show != 'News'}}">
+			<!--news-list></new-list-->
 		</div>
 		<div id="professor" class="info" hidden?="{{show != 'Professor'}}">
-			<professor-card></professor-card>
-			<div class="professor-info">
-				<core-item class="research-title" label="現職及經歷"></core-item>
-				<div horizontal layout center>
-  				<custom-date>
-  				  <h4>2014</h4>
-  				  <h4>FEB</h4>
-  				</custom-date>
-  				<div flex vertical layout>
-  				  <div>台灣科技大學電子工程系 教授</div>
-  				  <div class="duration">2014.02~迄今</div>
-  				</div>
-				</div>
-				<div horizontal layout center>
-  				<custom-date>
-  				  <h4>2014</h4>
-  				  <h4>JAN</h4>
-  				</custom-date>
-  				<div flex vertical layout>
-  				  <div>台灣科技大學電子工程系 副系主任</div>
-  				  <div class="duration">2014.01~迄今</div>
-  				</div>
-				</div>
-				<div horizontal layout center>
-  				<custom-date>
-  				  <h4>2011</h4>
-  				  <h4>FEB</h4>
-  				</custom-date>
-  				<div flex vertical layout>
-  				  <div>台灣科技大學電子工程系 副教授</div>
-  				  <div class="duration">2011.02~2014.01</div>
-  				</div>
-				</div>
-				<div horizontal layout center>
-  				<custom-date>
-  				  <h4>2007</h4>
-  				  <h4>FEB</h4>
-  				</custom-date>
-  				<div flex vertical layout>
-  				   <div>台灣科技大學電子工程系 助理教授</div>
-  				   <div class="duration">2007.02~2011.01</div>
-  				</div>
-				</div>
-				<div horizontal layout center>
-  				<custom-date>
-  				  <h4>2005</h4>
-  				  <h4>JUL</h4>
-  				</custom-date>
-  				<div flex vertical layout>
-  				   <div>台灣大哥大股份有限公司產品技術處副理</div>
-  				   <div class="duration">2005.07~2007.02</div>
-  				</div>
-				</div>
-				<div horizontal layout center>
-  				<custom-date>
-  				  <h4>1997</h4>
-  				  <h4>MAY</h4>
-  				</custom-date>
-  				<div flex vertical layout>
-  				  <div>東信電訊股份有限公司行動服務處專案副理</div>
-  				  <div class="duration">1997.05~2005.06</div>
-  				</div>
-				</div>
-				<div horizontal layout center>
-  				<custom-date>
-  				  <h4>1995</h4>
-  				  <h4>JUN</h4>
-  				</custom-date>
-  				<div flex vertical layout>
-  				  <div>理星科技股份有限公司研發工程師</div>
-  				  <div class="duration">1995.06~1997.04</div>
-  				</div>
-				</div>
-				<div horizontal layout center>
-  				<custom-date>
-  				  <h4>1993</h4>
-  				  <h4>JUL</h4>
-  				</custom-date>
-  				<div flex vertical layout>
-  				   <div>海軍預官</div>
-  				   <div class="duration">1993.07~1995.05</div>
-  				</div>
-				</div>
-			</div>
-    </div>
+			<professor-page></professor-page>
+    	</div>
 		<div id="members" hidden?="{{show != 'Members'}}">
-			<paper-tabs selected="0">
-				<paper-tab id="master" on-tap="{{memberTap}}">碩博士</paper-tab>
-				<paper-tab id="college" on-tap="{{memberTap}}">專題生</paper-tab>
-				<paper-tab id="graduated" on-tap="{{memberTap}}">畢業生</paper-tab>
-			</paper-tabs>
-			<post-service posts="{{members}}" url="members.json"></post-service>
-			<template repeat="{{member in members}}">
-				<member-card hidden?="{{idd != member.id}}">
-					<img src="{{member.avatar}}">
-					<h2>{{member.membername}}</h2>
-					<span class="study">{{member.study}}</span>
-					<span class="year">{{member.year}}</span>
-					<span class="email">{{member.email}}</span>
-				</member-card>
-			</template>
+			<member-page></member-page>
 		</div>
 		<div id="publications" hidden?="{{show != 'Publications'}}">
-			<paper-tabs selected="0">
-				<paper-tab id="journal" on-tap="{{paperTap}}">Journal papers ({{journal_count}})</paper-tab>
-				<paper-tab id="conference" on-tap="{{paperTap}}">Conference papers ({{conference_count}})</paper-tab>
-			</paper-tabs>
-			<post-service posts="{{journal_papers}}" url="journal_papers.json" count="{{journal_count}}"></post-service>
-			<post-service posts="{{conference_papers}}" url="conference_papers.json" count="{{conference_count}}"></post-service>
-			<template repeat="{{journal_paper in journal_papers}}">
-				<paper-card hidden?="{{paperType != journal_paper.type}}">
-					<span>{{journal_paper.papername}}</span>
-				</paper-card>
-			</template>
-			<template repeat="{{conference_paper in conference_papers}}">
-				<paper-card hidden?="{{paperType != conference_paper.type}}">
-					<span>{{conference_paper.papername}}</span>
-				</paper-card>
-			</template>
+			<paper-page></paper-page>
 		</div>
 		<div id="projects" hidden?="{{show != 'Projects'}}">
-			<project-cards></project-cards>
+			<project-page></project-page>
 		</div>
 		<div id="contact" hidden?="{{show != 'Contacts'}}">
-			<contact-card></contact-card>
+			<contact-page></contact-page>
 		</div>
 	</template>
-	<script>
-	Polymer('lab-content', {
-	  idd: {
-			value: ""
-		},
-		paperType: {
-			value: ""
-		},
-		ready: function(){
-			this.idd = "master";
-			this.paperType = "journal";
-		},
-		memberTap: function(event, detail, sender){
-			this.idd = sender.id;
-		},
-		paperTap: function(event, detail, sender){
-			this.paperType = sender.id;
-		}
-	});
-	</script>
 </polymer-element>

@@ -1,0 +1,120 @@
+<link rel="import" href="professor-card.html">
+<link rel="import" href="custom-date.html">
+
+<polymer-element name="professor-page" noscript>
+    <template>
+        <style>
+            professor-card {
+                width: 80%;
+                margin: 0 auto;
+                margin-top: 10px;
+            }
+            custom-date{
+                margin-right: 30px;
+                position: relative;
+            }
+            .professor-info{
+                width: 80%;
+                margin: 0 auto;
+                margin-top: 20px;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+            }
+            .research-title{
+                color: #6B5344;
+                font-size: 1.2em;
+                font-weight: 900;
+            }
+            .duration{
+                margin-top: 10px;
+                font-size: 0.7rem;
+            }
+        </style>
+
+        <professor-card></professor-card>
+        <div class="professor-info">
+            <core-item class="research-title" label="現職及經歷"></core-item>
+            <div horizontal layout center>
+                <custom-date>
+                    <h4>2014</h4>
+                    <h4>FEB</h4>
+                </custom-date>
+                <div flex vertical layout>
+                    <div>台灣科技大學電子工程系 教授</div>
+                    <div class="duration">2014.02~迄今</div>
+                </div>
+            </div>
+            <div horizontal layout center>
+                <custom-date>
+                    <h4>2014</h4>
+                    <h4>JAN</h4>
+                </custom-date>
+                <div flex vertical layout>
+                    <div>台灣科技大學電子工程系 副系主任</div>
+                    <div class="duration">2014.01~迄今</div>
+                </div>
+            </div>
+            <div horizontal layout center>
+                <custom-date>
+                    <h4>2011</h4>
+                    <h4>FEB</h4>
+                </custom-date>
+                <div flex vertical layout>
+                    <div>台灣科技大學電子工程系 副教授</div>
+                    <div class="duration">2011.02~2014.01</div>
+                </div>
+            </div>
+            <div horizontal layout center>
+                <custom-date>
+                    <h4>2007</h4>
+                    <h4>FEB</h4>
+                </custom-date>
+                <div flex vertical layout>
+                    <div>台灣科技大學電子工程系 助理教授</div>
+                    <div class="duration">2007.02~2011.01</div>
+                </div>
+            </div>
+            <div horizontal layout center>
+                <custom-date>
+                    <h4>2005</h4>
+                    <h4>JUL</h4>
+                </custom-date>
+                <div flex vertical layout>
+                    <div>台灣大哥大股份有限公司產品技術處副理</div>
+                    <div class="duration">2005.07~2007.02</div>
+                </div>
+            </div>
+            <div horizontal layout center>
+                <custom-date>
+                    <h4>1997</h4>
+                    <h4>MAY</h4>
+                </custom-date>
+                <div flex vertical layout>
+                    <div>東信電訊股份有限公司行動服務處專案副理</div>
+                    <div class="duration">1997.05~2005.06</div>
+                </div>
+            </div>
+            <div horizontal layout center>
+                <custom-date>
+                    <h4>1995</h4>
+                    <h4>JUN</h4>
+                </custom-date>
+                <div flex vertical layout>
+                    <div>理星科技股份有限公司研發工程師</div>
+                    <div class="duration">1995.06~1997.04</div>
+                </div>
+            </div>
+            <div horizontal layout center>
+                <custom-date>
+                    <h4>1993</h4>
+                    <h4>JUL</h4>
+                </custom-date>
+                <div flex vertical layout>
+                    <div>海軍預官</div>
+                    <div class="duration">1993.07~1995.05</div>
+                </div>
+            </div>
+        </div>
+    </template>
+</polymer-element>

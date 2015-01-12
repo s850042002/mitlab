@@ -1,0 +1,50 @@
+<link rel="import" href="member-card.html">
+<link rel="import" href="post-service.html">
+
+<polymer-element name="member-page">
+    <template>
+        <style>
+            paper-tabs::shadow #selectionBar{
+                background-color: #56BA89;
+            }
+            paper-tab::shadow #ink {
+                color: #56BA89;
+            }
+            member-card {
+                width: 80%;
+                margin: 0 auto;
+                margin-top: 10px;
+            }
+        </style>
+
+        <paper-tabs selected="0">
+            <paper-tab id="master" on-tap="{{memberTap}}">碩博士</paper-tab>
+            <paper-tab id="college" on-tap="{{memberTap}}">專題生</paper-tab>
+            <paper-tab id="graduated" on-tap="{{memberTap}}">畢業生</paper-tab>
+        </paper-tabs>
+        <post-service posts="{{members}}" url="members.json"></post-service>
+        <template repeat="{{member in members}}">
+            <member-card hidden?="{{idd != member.id}}">
+                <img src="{{member.avatar}}">
+                <h2>{{member.membername}}</h2>
+                <span class="study">{{member.study}}</span>
+                <span class="year">{{member.year}}</span>
+                <span class="email">{{member.email}}</span>
+            </member-card>
+        </template>
+
+    </template>
+    <script>
+        Polymer('member-page', {
+            idd: {
+                value: ""
+            },
+            ready: function(){
+                this.idd = "master";
+            },
+            memberTap: function(event, detail, sender){
+                this.idd = sender.id;
+            }
+        });
+    </script>
+</polymer-element>

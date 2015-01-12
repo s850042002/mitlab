@@ -1,0 +1,51 @@
+<link rel="import" href="paper-card.html">
+<link rel="import" href="post-service.html">
+
+<polymer-element name="paper-page">
+    <template>
+        <style>
+            paper-card {
+                width: 80%;
+                margin: 0 auto;
+                margin-top: 10px;
+            }
+            paper-tabs::shadow #selectionBar{
+                background-color: #56BA89;
+            }
+            paper-tab::shadow #ink {
+                color: #56BA89;
+            }
+        </style>
+
+        <paper-tabs selected="0">
+            <paper-tab id="journal" on-tap="{{paperTap}}">Journal papers ({{journal_count}})</paper-tab>
+            <paper-tab id="conference" on-tap="{{paperTap}}">Conference papers ({{conference_count}})</paper-tab>
+        </paper-tabs>
+        <post-service posts="{{journal_papers}}" url="journal_papers.json" count="{{journal_count}}"></post-service>
+        <post-service posts="{{conference_papers}}" url="conference_papers.json" count="{{conference_count}}"></post-service>
+        <template repeat="{{journal_paper in journal_papers}}">
+            <paper-card hidden?="{{paperType != journal_paper.type}}">
+                <span>{{journal_paper.papername}}</span>
+            </paper-card>
+        </template>
+        <template repeat="{{conference_paper in conference_papers}}">
+            <paper-card hidden?="{{paperType != conference_paper.type}}">
+                <span>{{conference_paper.papername}}</span>
+            </paper-card>
+        </template>
+
+    </template>
+    <script>
+        Polymer('paper-page', {
+            paperType: {
+                value: ""
+            },
+            ready: function(){
+                this.paperType = "journal";
+            },
+            paperTap: function(event, detail, sender){
+                this.paperType = sender.id;
+            }
+        });
+    </script>
+</polymer-element>
