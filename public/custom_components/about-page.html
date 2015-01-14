@@ -1,15 +1,20 @@
 <polymer-element name="about-page" noscript>
     <template>
         <style>
-            #lab-title{
-                color: #6B5344;
-                font-size: 1.6em;
-                font-weight: 900;
+            :host{
+                text-align: center;
             }
-            #border{
-                border-bottom: 1px #6B5344 solid;
+            img{
+                height: 100%;
+                width: 100%;
+            }
+            .sub-title{
+                border-bottom: 1px #333333 solid;
                 margin-top: 30px;
                 margin-bottom: 20px;
+                color: #333333;
+                font-size: 1.8em;
+                font-weight: 900;
             }
             .research-content{
                 margin-bottom: 20px;
@@ -19,11 +24,15 @@
             }
         </style>
 
-        <core-item id="lab-title" label="NTUST MIT Laboratory"></core-item>
+        <h1 class="sub-title">We are NTUST MIT Laboratory</h1>
+        <div>
+            <img src="../images/photo1.jpg">
+        </div>
         <p>本實驗室位於台灣科技大學電資大樓EE705-6，現有專題生4名，碩士生11位，博士班2位。</p>
         <p>實驗室會定期聚餐、舉辦活動，學習風氣良好，相處氣氛融洽，實驗室環境佳，並積極發表研究論文，與參加國內外研討會。</p>
         <p>歡迎對行動通訊系統、居家感測照護系統、雲端整合系統等相關領域有興趣的有志青年加入。</p>
-        <div id="border"></div>
+        <h1 class="sub-title">What we study?</h1>
+
         <div vertical layout>
             <div class="research-content">
                 <core-item class="research-title" icon="grade" label="行動通訊服務系統"></core-item>
