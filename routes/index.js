@@ -1,9 +1,24 @@
 var express = require('express');
 var router = express.Router();
+var enJSON = require('../lang/en.json');
+var twJSON = require('../lang/tw.json');
 
-/* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+router.get('/lang', function(req, res){
+  if(req.query.lang === "en"){
+    res.send(JSON.stringify(enJSON));
+  }
+  else{
+    res.send(JSON.stringify(twJSON));
+  }
 });
+
+router.get('/', function(req, res) {
+  //console.log("index")
+  //res.send({"status": status, "message": message});
+  //res.render('index', { title: 'Express' });
+});
+
+/* GET Language */
+
 
 module.exports = router;

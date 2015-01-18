@@ -15,6 +15,9 @@
     "core-list": "Polymer/core-list#~0.5.2",
     "paper-icon-button": "Polymer/paper-icon-button#~0.5.2",
     "paper-tabs": "Polymer/paper-tabs#~0.5.2",
-    "paper-fab": "Polymer/paper-fab#~0.5.2"
+    "paper-fab": "Polymer/paper-fab#~0.5.2",
+    "paper-fab-menu": "~0.0.1",
+    "core-overlay": "Polymer/core-overlay#~0.5.2",
+    "core-tooltip": "Polymer/core-tooltip#~0.5.2"
   }
 }
