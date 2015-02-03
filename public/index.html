@@ -44,6 +44,9 @@
 			font-weight: 300;
 			font-size: 120%;
 		}
+        lab-content{
+            height: 100%;
+        }
 		core-item{
 			margin-bottom: 20px;
 		}
@@ -58,7 +61,8 @@
 		#navheader {
 			background-color: #000000;
 			color: #ffffff;
-			font-weight: 700;
+            font-size: 1.6rem;
+            font-weight: 700;
 		}
 		#mainheader {
 			background-color: #159EB6;
@@ -66,17 +70,12 @@
 			font-weight: 500;
 			font-size: 150%;
 		}
-		#lab-title{
-			font-size: 1.6rem;
-			font-weight: 700;
-		}
 		core-drawer-panel:not([narrow]) #navicon {
 			display: none;
 		}
 		</style>
 		<script>
 			document.addEventListener('polymer-ready', function() {
-				var currentLang = "en";
 				var coredrawerpanel = document.querySelector('core-drawer-panel');
 				var labcontent = document.querySelector('lab-content');
 				var toolbartitle = document.getElementById('toolbar-title');
@@ -85,8 +84,14 @@
 				var navicon = document.querySelector('#navicon');
 				var langButton = document.querySelector("paper-fab-menu-item[icon=language]");
 				var langAjax = document.querySelector('#lang-ajax');
+                var currentLang = 'tw';
 				var currentPage = 'about';
-				labcontent.show = currentPage;
+                labcontent.show = currentPage;
+                labcontent.language = currentLang;
+
+                var data = {"lang": currentLang};
+                langAjax.params = data;
+                langAjax.go();
 
 				if ('ontouchend' in document) {
 					var fabMenu = document.querySelector("#fab-menu");
@@ -109,15 +114,20 @@
 				}
 
 				langAjax.addEventListener('core-response', function(e){
-					var lang = e.detail.response;
-					var menu = lang['menu'].replace('[', '').replace(']', '').replace(/\'/g, '').split(',');
+					var langContent = e.detail.response;
+					var menu = langContent['menu'].replace('[', '').replace(']', '').replace(/\'/g, '').split(',');
 					for(i=0; i<menuitem.length; i++){
 						menuitem[i].setAttribute('label', menu[i]);
 						if(menuitem[i].getAttribute('data-menu') === currentPage){
 							toolbartitle.label = menuitem[i].label;
 						}
 					}
+                    labcontent.content = langContent;
+                    labcontent.language = currentLang;
+                    //console.log(lang['about']);
+                    //console.log(lang['about']['intro']);
 				});
+
 				langAjax.addEventListener('core-error', function(e){
 					console.log(e.detail.response);
 				});
@@ -125,6 +135,7 @@
 				navicon.addEventListener('click', function() {
 					drawerPanel.togglePanel();
 				});
+
 				langButton.addEventListener('click', function(e) {
 					currentLang = (currentLang === "en") ? "tw" : "en";
 					var data = {"lang": currentLang};
@@ -138,17 +149,15 @@
 	<body fullbleed>
 		<core-drawer-panel id="drawerPanel" responsiveWidth="800px">
 			<core-header-panel drawer mode="seamed">
-				<core-toolbar id="navheader">
-					<span id="lab-title">MITLAB</span>
-				</core-toolbar>
+				<core-toolbar id="navheader">MITLAB</core-toolbar>
 				<core-menu selected="0">
-					<core-item class="menu-item" icon="info" data-menu="about" label="About us"></core-item>
-					<core-item class="menu-item" icon="av:news" data-menu="news" label="News"></core-item>
-					<core-item class="menu-item" icon="image:portrait" data-menu="prof" label="Professor"></core-item>
-					<core-item class="menu-item" icon="social:group" data-menu="members" label="Members"></core-item>
-					<core-item class="menu-item" icon="social:public" data-menu="publications" label="Publications"></core-item>
-					<core-item class="menu-item" icon="work" data-menu="projects" label="Projects"></core-item>
-					<core-item class="menu-item" icon="communication:contacts" data-menu="contacts" label="Contacts"></core-item>
+					<core-item class="menu-item" icon="info" data-menu="about" label=""></core-item>
+					<core-item class="menu-item" icon="event" data-menu="news" label=""></core-item>
+					<core-item class="menu-item" icon="image:portrait" data-menu="prof" label=""></core-item>
+					<core-item class="menu-item" icon="social:group" data-menu="members" label=""></core-item>
+					<core-item class="menu-item" icon="social:public" data-menu="publications" label=""></core-item>
+					<core-item class="menu-item" icon="work" data-menu="projects" label=""></core-item>
+					<core-item class="menu-item" icon="communication:contacts" data-menu="contacts" label=""></core-item>
 				</core-menu>
 			</core-header-panel>
 
@@ -157,14 +166,14 @@
 					<paper-icon-button id="navicon" icon="menu"></paper-icon-button>
 					<core-item id="toolbar-title" icon="info" label="About us"></core-item>
 				</core-toolbar>
-				<lab-content show="About us"></lab-content>
+                <lab-content></lab-content>
 			</core-header-panel>
 		</core-drawer-panel>
 		<paper-fab-menu id="fab-menu" icon="more-vert" closeIcon="close" duration="0.2">
 			<paper-fab-menu-item icon="language" color="green;" tooltip="Switch language"></paper-fab-menu-item>
 			<paper-fab-menu-item icon="mail" color="orange;" tooltip="Mail to us" href="mailto:jsleu@mail.ntust.edu.tw"></paper-fab-menu-item>
 		</paper-fab-menu>
-		<core-overlay-layer class></core-overlay-layer>
+
 		<core-ajax id="lang-ajax" url="lang" handleAs="json"></core-ajax>
 	</body>
 </html>

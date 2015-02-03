@@ -13,12 +13,7 @@ router.get('/lang', function(req, res){
 });
 
 router.get('/', function(req, res) {
-  //console.log("index")
-  //res.send({"status": status, "message": message});
-  //res.render('index', { title: 'Express' });
+    console.log(req.user);
 });
-
-/* GET Language */
-
 
 module.exports = router;

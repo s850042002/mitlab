@@ -1,7 +1,7 @@
 <link rel="import" href="member-card.html">
 <link rel="import" href="post-service.html">
 
-<polymer-element name="member-page">
+<polymer-element name="member-page" attributes="content">
     <template>
         <style>
             paper-tabs::shadow #selectionBar{
@@ -18,9 +18,9 @@
         </style>
 
         <paper-tabs selected="0">
-            <paper-tab id="master" on-tap="{{memberTap}}">碩博士</paper-tab>
-            <paper-tab id="college" on-tap="{{memberTap}}">專題生</paper-tab>
-            <paper-tab id="graduated" on-tap="{{memberTap}}">畢業生</paper-tab>
+            <paper-tab id="master" on-tap="{{memberTap}}">{{content[0]}}</paper-tab>
+            <paper-tab id="college" on-tap="{{memberTap}}">{{content[1]}}</paper-tab>
+            <paper-tab id="graduated" on-tap="{{memberTap}}">{{content[2]}}</paper-tab>
         </paper-tabs>
         <post-service posts="{{members}}" url="members.json"></post-service>
         <template repeat="{{member in members}}">

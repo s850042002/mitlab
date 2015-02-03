@@ -1,5 +1,16 @@
 {
-   "menu": "['About us', 'News', 'Professor', 'Members', 'Publication', 'Projects', 'Contacts']",
-
-   "version": "0.0.1"
+    "menu": "['About us', 'News', 'Professor', 'Members', 'Publication', 'Projects', 'Contacts']",
+    "about":{
+      "intro": ["The MITLAB is located at NTUST EE705-6, 4 college students, 11 graduated students and 2 doctor students.",
+        "Conference and publication",
+        "We expect anyone who is interested in mobile, home caring system and cloud computing to join us"],
+      "research": [
+        {"title": "Mobile services system","content": ""},
+        {"title": "Integration of heterogeneous networks", "content":""},
+        {"title": "P2P network", "content":""},
+        {"title": "Sensor network", "content":""}
+      ]
+    },
+    "members":["Ph.D. and M.S. Students", "Undergraduate Students", "Graduates"],
+    "version": "0.0.1"
 }

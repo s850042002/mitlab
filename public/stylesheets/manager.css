@@ -1,0 +1,40 @@
+*{
+    font-family: "RobotoDraft",Helvetica,Arial,sans-serif;
+}
+core-toolbar{
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+.content{
+    padding: 50px;
+}
+#submit-button{
+    width: 25%;
+    height: 50px;
+    font-size: 1.2rem;
+    background-color: #d6d6d6;
+    color: #000000;
+}
+#submit-button:hover{
+    background-color: #a0a0a0;
+}
+#bottom{
+    margin-top: 20px;
+}
+#error{
+    margin-left: 50px;
+    font-weight: 700;
+    color: #d3081a;
+}
+a{
+    width: 100px;
+    height: 100px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    cursor: default;
+    background-color: #d6d6d6;
+    color: #000000;
+    margin-top: 50px;
+}
