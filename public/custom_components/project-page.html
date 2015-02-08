@@ -1,3 +1,6 @@
+<link rel="import" href="../bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="../bower_components/core-animated-pages/core-animated-pages.html">
+
 <polymer-element name="project-page">
 	<template>
 		<style>
@@ -41,38 +44,29 @@
 		}
 		</style>
 
-		<!-- CARD CONTENTS GO HERE -->
-		<div>
-			<core-animated-pages selected="{{page}}" transitions="hero-transition">
-				<section>
-					<template repeat="{{projects as project}}">
-						<div class="project-card-small" hero-id="{{project.title}}" hero on-tap="{{transition}}">
-							<img src="{{project.img}}" class="card-top" hero-id="{{project.title}}-img" hero>
-							<h2 class="card-title">{{project.title}}</h2>
-						</div>
-					</template>
-				</section>
-				<section id="details">
-					<div class="project-card-big" layout vertical center hero-id="{{selectProject.title}}" hero on-tap="{{transition}}">
-						<img src="{{selectProject.img}}" class="card-center" hero-id="{{selectProject.title}}-img" hero>
-						<h2 class="card-title">{{selectProject.title}}</h2>
-						<p class="card-detail">{{selectProject.detail}}</p>
-					</div>
-				</section>
-			</core-animated-pages>
-		</div>
+        <core-ajax id="ajax" auto url="projects.json" on-core-response="{{responseHandler}}" handleAs="json"></core-ajax>
+        <core-animated-pages selected="{{page}}" transitions="hero-transition">
+            <section>
+                <template repeat="{{projects as project}}">
+                    <div class="project-card-small" hero-id="{{project.title}}" hero on-tap="{{transition}}">
+                        <img src="{{project.img}}" class="card-top" hero-id="{{project.title}}-img" hero>
+                        <h2 class="card-title">{{project.title}}</h2>
+                    </div>
+                </template>
+            </section>
+            <section id="details">
+                <div class="project-card-big" layout vertical center hero-id="{{selectProject.title}}" hero on-tap="{{transition}}">
+                    <img src="{{selectProject.img}}" class="card-center" hero-id="{{selectProject.title}}-img" hero>
+                    <h2 class="card-title">{{selectProject.title}}</h2>
+                    <p class="card-detail">{{selectProject.detail}}</p>
+                </div>
+            </section>
+        </core-animated-pages>
 	</template>
 	<script>
     Polymer('project-page', {
-  		page: 0,
-  		projects: [
-  			{ title: '微晶片競速自走車開發系統', img: 'images/freescale.jpg', detail: '在此專題上我們的主要目的是讓這台自走車，可以沿著軌道去做辨識以及校正，可以依照軌道的方式去走，我們可以將專題分為硬體與軟體部分，而在軟體部分，分為了好幾個項目，直流馬達(DC Motor)、伺服馬達(Servo Motor)的程式碼控制，在線掃瞄相機(Line Scan Camera)的部分，我們也完成了擷取影像並且將他讀取到的波型轉換成數值去作演算法的運算。在此專題上我們的主要目的是讓這台自走車，可以沿著軌道去做辨識以及校正，可以依照軌道的方式去走，我們可以將專題分為硬體與軟體部分，而在軟體部分，分為了好幾個項目，直流馬達(DC Motor)、伺服馬達(Servo Motor)的程式碼控制，在線掃瞄相機(Line Scan Camera)的部分，我們也完成了擷取影像並且將他讀取到的波型轉換成數值去作演算法的運算。在此專題上我們的主要目的是讓這台自走車，可以沿著軌道去做辨識以及校正，可以依照軌道的方式去走，我們可以將專題分為硬體與軟體部分，而在軟體部分，分為了好幾個項目，直流馬達(DC Motor)、伺服馬達(Servo Motor)的程式碼控制，在線掃瞄相機(Line Scan Camera)的部分，我們也完成了擷取影像並且將他讀取到的波型轉換成數值去作演算法的運算。在此專題上我們的主要目的是讓這台自走車，可以沿著軌道去做辨識以及校正，可以依照軌道的方式去走，我們可以將專題分為硬體與軟體部分，而在軟體部分，分為了好幾個項目，直流馬達(DC Motor)、伺服馬達(Servo Motor)的程式碼控制，在線掃瞄相機(Line Scan Camera)的部分，我們也完成了擷取影像並且將他讀取到的波型轉換成數值去作演算法的運算。' },
-  			{ title: '數位膠囊時光雲端系統', img: 'images/background.jpg', detail: '此專題藉由雲端空間，將拍攝照片儲存至雲端，解決智慧型裝置內存問題，除了備份文件功能以外，與時空背景做關聯，當重遊此地時，透過Augmented Reality觀看當時照片，以及當時心情呈現於眼前，一個充滿回憶的時光膠囊。' },
-  			{ title: '緊急救援小幫手', img: 'images/background.jpg', detail: '談到設計「緊急救援小幫手」的初衷，開發者提到他自己本身曾經在爬雪山途中身體不適，但在施打藥物時醫師並無注意到體質的關係，因此發生過敏現象。如果，這個時候可以有一款App來紀錄個人身體狀況，也許就不會發生這種事了。' },
-  			{ title: 'BBGO', img: 'images/background.jpg', detail: '#dc3c84' }
-  		],
+        page: 0,
   		selectProject: null,
-
   		transition: function(e) {
   			if (this.page === 0 && e.target.templateInstance.model.project) {
   				this.selectProject = e.target.templateInstance.model.project;
@@ -80,7 +74,10 @@
   			} else {
   				this.page = 0;
   			}
-  		}
+  		},
+        responseHandler: function(e){
+            this.projects = e.detail.response;
+        }
     });
 	</script>
 </polymer-element>

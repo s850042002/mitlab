@@ -1,4 +1,4 @@
-<polymer-element name="contact-page" noscript>
+<polymer-element name="contact-page" attributes="language" noscript>
 	<template>
 		<style>
 		:host {
@@ -29,18 +29,20 @@
 		<div class="card-header" layout horizontal center>
 			<h2>NTUST MITLAB</h2>
 		</div>
-		<address>
+		<address hidden?="{{language != 'tw'}}">
 			10607台北市大安區基隆路4段43號<br>
 			資訊技術行動化實驗室 EE-705-6<br>
 			聯絡電話:+886-2-2733-3141<br>
 			傳真電話:+886-2-2733-7214<br>
-			E-mail: <a href="mailto:jsleu@mail.ntust.edu.tw">jsleu@mail.ntust.edu.tw</a><br><br>
-			NO.43, SEC. 4, KEELUNG RD.,<br>
-			DA’AN DIST., TAIPEI 106, TAIWAN<br>
-			(R.O.C.)NTUST EE-705-6<br>
-			Telephone:+886-2-2733-3141<br>
-			FAX:+886-2-2733-7214<br>
-			E-mail: <a href="mailto:jsleu@mail.ntust.edu.tw">jsleu@mail.ntust.edu.tw</a><br>
+			E-mail: <a href="mailto:jsleu@mail.ntust.edu.tw">jsleu@mail.ntust.edu.tw</a>
 		</address>
+        <address hidden?="{{language != 'en'}}">
+            NO.43, SEC. 4, KEELUNG RD.,<br>
+            DA’AN DIST., TAIPEI 106, TAIWAN<br>
+            (R.O.C.)NTUST EE-705-6<br>
+            Telephone:+886-2-2733-3141<br>
+            FAX:+886-2-2733-7214<br>
+            E-mail: <a href="mailto:jsleu@mail.ntust.edu.tw">jsleu@mail.ntust.edu.tw</a>
+        </address>
 	</template>
 </polymer-element>

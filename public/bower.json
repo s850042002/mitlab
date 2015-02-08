@@ -19,6 +19,7 @@
     "paper-fab-menu": "~0.0.1",
     "paper-input": "Polymer/paper-input#~0.5.2",
     "core-overlay": "Polymer/core-overlay#~0.5.2",
-    "core-tooltip": "Polymer/core-tooltip#~0.5.2"
+    "core-tooltip": "Polymer/core-tooltip#~0.5.2",
+    "core-scroll-threshold": "Polymer/core-scroll-threshold#~0.5.4"
   }
 }
