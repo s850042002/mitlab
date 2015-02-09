@@ -6,7 +6,7 @@
 <link rel="import" href="project-page.html">
 <link rel="import" href="contact-page.html">
 
-<polymer-element name="lab-content" attributes="show content language">
+<polymer-element name="lab-content" attributes="show content languages" noscript>
 	<template>
 		<style>
 			:host {
@@ -25,10 +25,10 @@
 			<about-page content="{{content.about}}"></about-page>
         </div>
 		<div id="news" class="info" hidden?="{{show != 'news'}}">
-			<news-list language="{{language}}"></news-list>
+			<news-list languages="{{languages}}"></news-list>
 		</div>
 		<div id="professor" class="info" hidden?="{{show != 'prof'}}">
-			<professor-page language="{{language}}"></professor-page>
+			<professor-page languages="{{languages}}"></professor-page>
     	</div>
 		<div id="members" hidden?="{{show != 'members'}}">
 			<member-page content="{{content.members}}"></member-page>
@@ -40,12 +40,7 @@
 			<project-page></project-page>
 		</div>
 		<div id="contact" hidden?="{{show != 'contacts'}}">
-			<contact-page language="{{language}}" style="margin: 0 auto; margin-top: 20px;"></contact-page>
+			<contact-page languages="{{languages}}" style="margin: 0 auto; margin-top: 20px;"></contact-page>
 		</div>
 	</template>
-    <script>
-        Polymer('lab-content', {
-
-        });
-    </script>
 </polymer-element>

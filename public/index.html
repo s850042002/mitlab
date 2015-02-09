@@ -26,7 +26,6 @@
 		<link rel="import" href="bower_components/paper-fab-menu/paper-fab-menu-item.html">
 		<link rel="import" href="bower_components/core-tooltip/core-tooltip.html">
 		<link rel="import" href="bower_components/core-overlay/core-overlay-layer.html">
-		<link rel="import" href="bower_components/core-list/core-list.html">
 		<link rel="import" href="custom_components/lab-content.html">
 		<style>
 		html,body {
@@ -86,7 +85,7 @@
                 var currentLang = 'tw';
 				var currentPage = 'about';
                 labcontent.show = currentPage;
-                labcontent.language = currentLang;
+                labcontent.languages = currentLang;
 
                 var data = {"lang": currentLang};
                 langAjax.params = data;
@@ -122,9 +121,7 @@
 						}
 					}
                     labcontent.content = langContent;
-                    labcontent.language = currentLang;
-                    //console.log(lang['about']);
-                    //console.log(lang['about']['intro']);
+                    labcontent.languages = currentLang;
 				});
 
 				langAjax.addEventListener('core-error', function(e){

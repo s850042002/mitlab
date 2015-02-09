@@ -1,7 +1,7 @@
 <link rel="import" href="professor-card.html">
 <link rel="import" href="custom-date.html">
 
-<polymer-element name="professor-page" attributes="language" noscript>
+<polymer-element name="professor-page" attributes="languages" noscript>
     <template>
         <style>
             professor-card {
@@ -32,8 +32,8 @@
             }
         </style>
 
-        <professor-card language="{{language}}"></professor-card>
-        <div class="professor-info" hidden?="{{language != 'tw'}}">
+        <professor-card languages="{{languages}}"></professor-card>
+        <div class="professor-info" hidden?="{{languages != 'tw'}}">
             <core-item class="research-title" label="現職及經歷"></core-item>
             <div horizontal layout center>
                 <custom-date>
@@ -116,7 +116,7 @@
                 </div>
             </div>
         </div>
-        <div class="professor-info" hidden?="{{language != 'en'}}">
+        <div class="professor-info" hidden?="{{languages != 'en'}}">
             <core-item class="research-title" label="Experience"></core-item>
             <div horizontal layout center>
                 <custom-date>

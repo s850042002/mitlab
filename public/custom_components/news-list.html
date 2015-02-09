@@ -1,7 +1,7 @@
 <link rel="import" href="../bower_components/core-ajax/core-ajax.html">
 <link rel="import" href="../bower_components/core-scroll-threshold/core-scroll-threshold.html">
 
-<polymer-element name="news-list" attributes="language">
+<polymer-element name="news-list" attributes="languages">
 	<template>
 		<style>
         #scroller {
@@ -35,8 +35,8 @@
             <template repeat="{{d in data}}">
                 <div class="item" layout horizontal center>
                     <div layout vertical flex>
-                        <div class="subject" hidden?="{{language != 'tw'}}">{{d.tw}}</div>
-                        <div class="subject" hidden?="{{language != 'en'}}">{{d.en}}</div>
+                        <div class="subject" hidden?="{{languages != 'tw'}}">{{d.tw}}</div>
+                        <div class="subject" hidden?="{{languages != 'en'}}">{{d.en}}</div>
                         <div self-end class="time">{{d.time}}</div>
                     </div>
                 </div>

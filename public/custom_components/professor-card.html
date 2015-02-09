@@ -1,4 +1,4 @@
-<polymer-element name="professor-card" attributes="language" noscript>
+<polymer-element name="professor-card" attributes="languages" noscript>
 	<template>
 		<style>
 		:host {
@@ -30,7 +30,7 @@
 			margin-left: 7px;
 		}
 		</style>
-        <div hidden?="{{language != 'tw'}}">
+        <div hidden?="{{languages != 'tw'}}">
             <div class="card-header" layout horizontal center>
                 <img src="../images/professor.jpg">
                 <h2>呂政修 教授</h2>
@@ -44,7 +44,7 @@
             <p class="info-title">聯絡電話:<span class="info-content">886-2-27376386</span></p>
             <p class="info-title">傳真電話:<span class="info-content">886-2-27376424</span></p>
         </div>
-        <div hidden?="{{language != 'en'}}">
+        <div hidden?="{{languages != 'en'}}">
             <div class="card-header" layout horizontal center>
                 <img src="../images/professor.jpg">
                 <h2>Professor Jenq-Shiou Leu</h2>
