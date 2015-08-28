@@ -1,6 +1,54 @@
 [
   {
-    "papername" : "T.-K. Cheng, J.-S. Leu*, I.-X. Chen, J.-L. C. Wu and Z.-Y. Zhu, “Practical Context Awareness Information System for Wireless Vehicular Networks based on a Core Telematics Platform,” International Journal of Distributed Sensor Networks, Hindawi [SCI,EI] (Accepted)",
+    "papername" : "J.-S. Leu*, M.-C. Yu and H.-J. Tzeng, “Improving Indoor Positioning Precision by Using Received Signal Strength Fingerprint and Footprint Based on Weighted Ambient Wi-Fi Signals,” Computer Networks (ComNet), Elsevier [SCI,EI] (Accepted)",
+  "type" : "journal"
+  },
+  {
+    "papername" : "J.-S. Leu*, W.-B. Hsieh, Y.-S. Yee, “Implementing Billing as a Service by an IPDR Aggregator System,” Wireless Personal Communications(WPC), Springer [SCI,EI](Accepted)",
+  "type" : "journal"
+  },
+  {
+    "papername" : "H.-L. Yeh, T.-Y. Chen, H.-W. Wei*, N.-I Hsu, J.-S. Leu and H.-Y. Chen, “CloudBook: Implementing an E-Book Reader on a Cloud Platform by an Optimized Vector Graphic Library,” Computer Standards & Interfaces (CSI), Elsevier [SCI,EI](Accepted)",
+  "type" : "journal"
+  },
+  {
+    "papername" : "J.-S. Leu*, K.-C. Hsu, and T. Song, “Enhancing the Presence Service Efficiency of Internet Protocol Multimedia Subsystem-based Web Services,” Wireless Personal Communications, Springer [SCI,EI] (Accepted)",
+  "type" : "journal"
+  },
+  {
+    "papername" : "T.-Y. Chen, H.-W. Wei, Y.-C. Cheng, J.-S. Leu, W.-K. Shih, N.-I Hsu, “Integrating an e-book Software with Vector Graphic Technology on Cloud Platform,” Procedia - Social and Behavioral Sciences, Elsevier, Vol. 176, pp. 1012-1019, Feb. 2015",
+  "type" : "journal"
+  },
+  {
+    "papername" : "K.-H. Li and J.-S. Leu*, “Weakly Connected Dominating Set-Assisted Ant-based Routing Protocol for Wireless Ad-hoc Networks,” Computers and Electrical Engineering, Elsevier [SCI,EI] (Accepted)",
+  "type" : "journal"
+  },
+  {
+    "papername" : "J.-S. Leu*, T.-H. Chiang, M.-C. Yu, and K.-W. Su, “Energy Efficient Clustering Scheme for Prolonging the Lifetime of Wireless Sensor Network with Isolated Nodes,” IEEE Communications Letters, Vol. 19, Issue 2, pp. 259-262, Feb. 2015 [SCI,EI]",
+  "type" : "journal"
+  },
+  {
+    "papername" : "J.-S. Leu*, J.-H. Chen, and K.-H. Li, “Hybrid Search Scheme for Social Networks Supported by Dynamic Weighted Distributed Label Clustering,” IEEE Transactions on Computers, Vol. 64, No. 9, pp. 2586-2594, Sep. 2015 [SCI,EI]",
+  "type" : "journal"
+  },
+  {
+    "papername" : "J.-S. Leu* and Z.-Y. Zhu, “Regression-based Parking Space Availability Prediction for the Ubike System,” IET Intelligent Transport Systems, Vol. 9, Issue 3, pp. 323-332, Mar. 2015 [SCI,EI]",
+  "type" : "journal"
+  },
+  {
+    "papername" : "K.-H. Li, J.-S. Leu*, J. Hosek, “Swarm-based Routing Protocol Assisted by Weakly Connected Dominating Sets for Mobile Ad-hoc Networks,” Journal of Internet Technology [SCI,EI] (Accepted)",
+  "type" : "journal"
+  },
+  {
+    "papername" : "J.-S. Leu*, W.-H. Lin, W.-B. Hsieh, C.-C. Lo, “Design and Implementation of a VoIP broadcasting Service over Embedded Systems in a Heterogeneous Network Environment,” The Scientific World Journal, Hindawi, Vol. 2014, Article ID 917060 [SCI,EI]",
+  "type" : "journal"
+  },
+  {
+    "papername" : "J.-S. Leu*, M.-C. Yu, H.-C. Yueh, “Improving Network Coding Based File Sharing for Unstructured Peer-to-Peer Networks,” Journal of the Network and Systems Management, Springer [SCI,EI](accepted)",
+  "type" : "journal"
+  },
+  {
+    "papername" : "T.-K. Cheng, J.-S. Leu*, I.-X. Chen, J.-L. C. Wu and Z.-Y. Zhu, “Practical Context Awareness Information System for Wireless Vehicular Networks based on a Core Telematics Platform,” International Journal of Distributed Sensor Networks, Hindawi, Vol. 2014, Article ID 929165 [SCI,EI]",
 	"type" : "journal"
   },
   {
@@ -26,6 +74,10 @@
   {
     "papername" : "W.-B. Hsieh* and J.-S. Leu, “A Robust User Authentication Scheme Using Dynamic Identity in Wireless Sensor Network,” Wireless Personal Communications(WPC), Springer [SCI,EI] (Accepted)",
 	"type" : "journal"
+  },
+  {
+    "papername" : "W.-B. Hsieh* and J.-S. Leu, “A Robust User Authentication Scheme Using Dynamic Identity in Wireless Sensor Network,” Wireless Personal Communications(WPC), Springer, Vol. 77, Issue 2, pp. 979-989, Jul. 2014 [SCI,EI]",
+  "type" : "journal"
   },
   {
     "papername" : "J.-S. Leu*, W.-H. Lin, J.-H. Chen, “P2P Resource Searching with Cloning Random Walker Assisted by Weakly Connected Dominating Set,” Journal of Supercomputing, Springer [SCI,EI] (Accepted)",
