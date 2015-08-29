@@ -5,12 +5,14 @@
         "Conference and publication",
         "We expect anyone who is interested in mobile, home caring system and cloud computing to join us"],
       "research": [
+        {"title": "Heterogeneous Network Related Topics","content": "To offer a more efficient wireless data access service, disparate wireless networks complement each other to provide a higher wireless accessibility. For example, the WLAN network inter-works with the cellular network. Incorporating heterogeneous networks into the network service group could make interactions in-between more complicated. We focus on the challenges while integrating heterogeneous networks."},
+        {"title": "Mobile Application/System Design","content": "Thanks to the advancement of wireless technology, mobile services increasingly catch more attention in the post era of the booming voice service. A typical mobile wireless service comprises three parts: services, user devices and networks. Creating mobile broadband services over heterogeneous bearers (2.5G, 3G, WLAN or WiMAX) may face the problem about a great diversity of combinations in service flows. We focus on the challenges about designing mobile services and architectures."},
         {"title": "Mobile services system","content": ""},
         {"title": "Integration of heterogeneous networks", "content":""},
         {"title": "P2P network", "content":""},
         {"title": "Sensor network", "content":""}
       ]
     },
-    "members":["Ph.D. and M.S. Students", "Undergraduate Students", "Graduates"],
-    "version": "0.0.1"
+    "members":["Ph.D. Students", "M.S. Students", "Graduates"],
+    "version": "0.0.2"
 }

@@ -18,9 +18,9 @@
         </style>
 
         <paper-tabs selected="0">
-            <paper-tab id="master" on-tap="{{memberTap}}">{{content[0]}}</paper-tab>
-            <paper-tab id="college" on-tap="{{memberTap}}">{{content[1]}}</paper-tab>
-            <paper-tab id="graduated" on-tap="{{memberTap}}">{{content[2]}}</paper-tab>
+            <paper-tab id="master" on-tap="{{memberTap}}">{{content[0]}} (3)</paper-tab>
+            <paper-tab id="ms-students" on-tap="{{memberTap}}">{{content[1]}} (19)</paper-tab>
+            <paper-tab id="graduated" on-tap="{{memberTap}}">{{content[2]}} (27)</paper-tab>
         </paper-tabs>
         <post-service posts="{{members}}" url="members.json"></post-service>
         <template repeat="{{member in members}}">
@@ -30,6 +30,7 @@
                 <span class="study">{{member.study}}</span>
                 <span class="year">{{member.year}}</span>
                 <span class="email">{{member.email}}</span>
+                <span class="other">{{member.other}}</span>
             </member-card>
         </template>
 
