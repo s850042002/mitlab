@@ -1,44 +1,40 @@
 [  
   {
+    "membername" : "鄭自凱 WILLIAM CHENG",
+  "email" : "D9602205@mail.ntust.edu.tw",
+  "id" : "master",
+  "study" : "You don't wanna know",
+    "avatar" : "images/avatar-02.svg",
+  "year" : "96",
+    "other" : ""
+  },
+  {
     "membername" : "林暐翔",
-    "email" : "link3233@yahoo.com.tw",
-    "id" : "master",
-    "study" : "You don't wanna know",
+  "email" : "D9902101@mail.ntust.edu.tw",
+  "id" : "master",
+  "study" : "You don't wanna know",
     "avatar" : "images/avatar-03.svg",
-    "year" : "99",
+  "year" : "99",
     "other" : ""
   },
   {
     "membername" : "游敏杰",
-    "email" : "D10002103@mail.ntust.edu.tw",
-    "id" : "master",
-    "study" : "You don't wanna know",
+  "email" : "D10002103@mail.ntust.edu.tw",
+  "id" : "master",
+  "study" : "You don't wanna know",
     "avatar" : "images/avatar-04.svg",
-    "year" : "100",
+  "year" : "100",
     "other" : ""
   },
   {
     "membername" : "蘇冠武",
-    "email" : "D10102107@mail.ntust.edu.tw",
-    "id" : "master",
-    "study" : "You don't wanna know",
+  "email" : "D10002103@mail.ntust.edu.tw",
+  "id" : "master",
+  "study" : "You don't wanna know",
     "avatar" : "images/avatar-05.svg",
-    "year" : "101",
+  "year" : "100",
     "other" : ""
   },
-  //碩士生!-------------------------------------------------------
-  {
-    "membername" : "Jaime Mora",
-    "email" : "M9802804@mail.ntust.edu.tw",
-    "id" : "ms-students",
-    "study" : "You don't wanna know",
-    "avatar" : "images/avatar-02.svg",
-    "year" : "98",
-    "other" : ""
-  },
-  
-  
-  
   {
     "membername" : "呂定宸",
   "email" : "M10002907@mail.ntust.edu.tw",
