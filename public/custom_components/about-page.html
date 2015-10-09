@@ -30,18 +30,22 @@
                 text-align: left;
                 padding: 0 20px 20px 20px;
             }
+            @media (max-width: 800px){
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
         </style>
 
-        <h1 class="sub-title">We are the NTUST MIT Laboratory</h1>
         <div>
+            <h1 class="sub-title">We are the NTUST MIT Laboratory</h1>
             <img src="../images/photo1.jpg">
-        </div>
-        <template is="dom-repeat" items="{{content.intro}}">
-            <p>{{item}}</p>
-        </template>
+            <template is="dom-repeat" items="{{content.intro}}">
+                <p>{{item}}</p>
+            </template>
 
-        <h1 class="sub-title">What we study?</h1>
-        <div>
+            <h1 class="sub-title">What we study?</h1>
             <template is="dom-repeat" items="{{content.research}}" as="research">
                 <paper-card elevation="2">
                     <paper-icon-item class="menu-item" data-menu="about">
