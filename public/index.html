@@ -4,172 +4,169 @@
 		<title>MITLAB</title>
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
-		<link rel="import" href="bower_components/core-ajax/core-ajax.html">
-		<link rel="import" href="bower_components/polymer/polymer.html">
-		<link rel="import" href="bower_components/font-roboto/roboto.html">
-		<link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
-		<link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
-		<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
-		<link rel="import" href="bower_components/core-menu/core-menu.html">
-		<link rel="import" href="bower_components/core-item/core-item.html">
-		<link rel="import" href="bower_components/core-icons/core-icons.html">
-		<link rel="import" href="bower_components/core-icons/communication-icons.html">
-		<link rel="import" href="bower_components/core-icons/av-icons.html">
-		<link rel="import" href="bower_components/core-icons/image-icons.html">
-		<link rel="import" href="bower_components/core-icons/social-icons.html">
-		<link rel="import" href="bower_components/core-icons/editor-icons.html">
-		<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
-		<link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
-		<link rel="import" href="bower_components/paper-fab/paper-fab.html">
-		<link rel="import" href="bower_components/paper-fab-menu/paper-fab-menu.html">
-		<link rel="import" href="bower_components/paper-fab-menu/paper-fab-menu-item.html">
-		<link rel="import" href="bower_components/core-tooltip/core-tooltip.html">
-		<link rel="import" href="bower_components/core-overlay/core-overlay-layer.html">
+		<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+        <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+        <link rel="import" href="bower_components/iron-icons/communication-icons.html">
+        <link rel="import" href="bower_components/iron-icons/image-icons.html">
+        <link rel="import" href="bower_components/iron-icons/social-icons.html">
+        <link rel="import" href="bower_components/iron-icon/iron-icon.html">
+        <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+        <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+        <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+        <link rel="import" href="bower_components/paper-menu/paper-menu.html">
+        <link rel="import" href="bower_components/paper-item/paper-icon-item.html">
+        <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
 		<link rel="import" href="custom_components/lab-content.html">
+
 		<style>
-		html,body {
-			font-family: "RobotoDraft",Helvetica,Arial,sans-serif;
+		html, body {
+			font-family: 'Noto Sans', sans-serif;
 		}
 		a{
 			text-decoration: none;
 		}
-		core-header-panel {
+		paper-header-panel {
 			height: 100%;
 			background-color: #ffffff;
 		}
-		core-menu{
-			font-weight: 300;
+		#header-title{
 			font-size: 120%;
 		}
-        lab-content{
-            height: 100%;
-        }
-		core-item{
-			margin-bottom: 20px;
-		}
-		core-icon{
-			color: #56BA89;
-		}
-		paper-fab-menu{
-			position: fixed;
-			left: 90px;
-			bottom: 20px;
-		}
-		#navheader {
+		#nav-header {
 			background-color: #000000;
 			color: #ffffff;
             font-size: 1.6rem;
             font-weight: 700;
 		}
-		#mainheader {
-			background-color: #159EB6;
+		#main-header {
+			background-color: #00bcd4;
 			color: #ffffff;
 			font-weight: 500;
 			font-size: 150%;
 		}
-		core-drawer-panel:not([narrow]) #navicon {
+		paper-drawer-panel:not([narrow]) #navicon {
 			display: none;
 		}
+        .menu-item{
+            cursor: default;
+            margin-bottom: 20px;
+        }
+		.menu-item-text{
+			font-size: 120%;
+		}
 		</style>
+
 		<script>
-			document.addEventListener('polymer-ready', function() {
-				var coredrawerpanel = document.querySelector('core-drawer-panel');
-				var labcontent = document.querySelector('lab-content');
-				var toolbartitle = document.getElementById('toolbar-title');
-				var drawerPanel = document.getElementById('drawerPanel');
-				var menuitem = document.querySelectorAll('.menu-item');
-				var navicon = document.querySelector('#navicon');
-				var langButton = document.querySelector("paper-fab-menu-item[icon=language]");
+            HTMLImports.whenReady(function() {
+				var paperDrawerPanel = document.querySelector('paper-drawer-panel');
+				var labContent = document.querySelector('lab-content');
+                var headerTitle = document.querySelector('#header-title');
+                var headerIcon = document.querySelector('#header-icon');
+				var drawerPanel = document.querySelector('#drawerPanel');
+				var menuItem = document.querySelectorAll('.menu-item');
+                var menuItemText = document.querySelectorAll('.menu-item-text');
+				var navIcon = document.querySelector('#navicon');
 				var langAjax = document.querySelector('#lang-ajax');
-                var currentLang = 'tw';
-				var currentPage = 'about';
-                labcontent.show = currentPage;
-                labcontent.languages = currentLang;
 
-                var data = {"lang": currentLang};
-                langAjax.params = data;
-                langAjax.go();
+				function init(){
+					var data = {"lang": "tw"};
+					langAjax.params = data;
+					langAjax.generateRequest();
 
-				if ('ontouchend' in document) {
-					var fabMenu = document.querySelector("#fab-menu");
-					var fabSubMenu = document.querySelectorAll("paper-fab-menu-item");
-					for(var i = 0; i<fabSubMenu.length; i++){
-						fabSubMenu[i].position = "left";
+					for(i = 0; i < menuItem.length; i++){
+						menuItem[i].addEventListener('click', function() {
+							paperDrawerPanel.togglePanel();
+							var currentPage = this.getAttribute("data-menu");
+							headerTitle.textContent = this.childNodes[4].textContent;
+							var iconElement = this.getElementsByTagName('iron-icon')[0];
+							headerIcon.setAttribute('icon', iconElement.getAttribute("icon"));
+							labContent.setAttribute('page', currentPage);
+						});
 					}
-					fabMenu.style.right = "10px";
-					fabMenu.style.bottom = "10px";
-				}
 
-				for(i=0; i<menuitem.length; i++){
-					menuitem[i].addEventListener('click', function() {
-						coredrawerpanel.togglePanel();
-						currentPage = this.getAttribute("data-menu");
-						labcontent.show = currentPage;
-						toolbartitle.label = this.label;
-						toolbartitle.icon = this.icon;
+					langAjax.addEventListener('response', function(e){
+						var langContent = e.detail.response;
+						var menu = langContent['menu'].replace('[', '').replace(']', '').replace(/\'/g, '').split(',');
+						for( i= 0; i < menuItemText.length; i++){
+							menuItemText[i].textContent = menu[i];
+						}
+						labContent.content = langContent;
+					});
+
+					langAjax.addEventListener('error', function(e){
+						console.log(e.detail.response);
+					});
+
+					navIcon.addEventListener('click', function() {
+						drawerPanel.togglePanel();
 					});
 				}
 
-				langAjax.addEventListener('core-response', function(e){
-					var langContent = e.detail.response;
-					var menu = langContent['menu'].replace('[', '').replace(']', '').replace(/\'/g, '').split(',');
-					for(i=0; i<menuitem.length; i++){
-						menuitem[i].setAttribute('label', menu[i]);
-						if(menuitem[i].getAttribute('data-menu') === currentPage){
-							toolbartitle.label = menuitem[i].label;
-						}
-					}
-                    labcontent.content = langContent;
-                    labcontent.languages = currentLang;
-				});
+				init();
 
-				langAjax.addEventListener('core-error', function(e){
-					console.log(e.detail.response);
-				});
-
-				navicon.addEventListener('click', function() {
-					drawerPanel.togglePanel();
-				});
-
-				langButton.addEventListener('click', function(e) {
+				/*langButton.addEventListener('click', function(e) {
 					currentLang = (currentLang === "en") ? "tw" : "en";
 					var data = {"lang": currentLang};
 					langAjax.params = data;
-					langAjax.go();
-				});
+					langAjax.generateRequest();
+				});*/
 			});
 		</script>
 	</head>
 
-	<body fullbleed>
-		<core-drawer-panel id="drawerPanel" responsiveWidth="800px">
-			<core-header-panel drawer mode="seamed">
-				<core-toolbar id="navheader">MITLAB</core-toolbar>
-				<core-menu selected="0">
-					<core-item class="menu-item" icon="info" data-menu="about" label=""></core-item>
-					<core-item class="menu-item" icon="event" data-menu="news" label=""></core-item>
-					<core-item class="menu-item" icon="image:portrait" data-menu="prof" label=""></core-item>
-					<core-item class="menu-item" icon="social:group" data-menu="members" label=""></core-item>
-					<core-item class="menu-item" icon="social:public" data-menu="publications" label=""></core-item>
-					<core-item class="menu-item" icon="work" data-menu="projects" label=""></core-item>
-					<core-item class="menu-item" icon="communication:contacts" data-menu="contacts" label=""></core-item>
-				</core-menu>
-			</core-header-panel>
+	<body>
+		<iron-ajax id="lang-ajax" url="lang" handleAs="json"></iron-ajax>
 
-			<core-header-panel main mode="seamed">
-				<core-toolbar id="mainheader">
+		<paper-drawer-panel id="drawerPanel" responsive-width="800px">
+			<paper-header-panel drawer mode="seamed">
+				<paper-toolbar id="nav-header">
+                    <div>MITLAB</div>
+                </paper-toolbar>
+
+				<paper-menu selected="0">
+					<paper-icon-item class="menu-item" data-menu="about">
+                        <div class="menu-item-text"></div>
+                        <iron-icon icon="info" item-icon></iron-icon>
+                    </paper-icon-item>
+                    <paper-icon-item class="menu-item" data-menu="news">
+                        <div class="menu-item-text"></div>
+                        <iron-icon icon="event" item-icon></iron-icon>
+                    </paper-icon-item>
+                    <paper-icon-item class="menu-item" data-menu="professor">
+                        <div class="menu-item-text"></div>
+                        <iron-icon icon="image:portrait" item-icon></iron-icon>
+                    </paper-icon-item>
+                    <paper-icon-item class="menu-item" data-menu="members">
+                        <div class="menu-item-text"></div>
+                        <iron-icon icon="social:group" item-icon></iron-icon>
+                    </paper-icon-item>
+                    <paper-icon-item class="menu-item" data-menu="publications">
+                        <div class="menu-item-text"></div>
+                        <iron-icon icon="social:public" item-icon></iron-icon>
+                    </paper-icon-item>
+                    <paper-icon-item class="menu-item" data-menu="projects">
+                        <div class="menu-item-text"></div>
+                        <iron-icon icon="work" item-icon></iron-icon>
+                    </paper-icon-item>
+                    <paper-icon-item class="menu-item" data-menu="contact">
+                        <div class="menu-item-text"></div>
+                        <iron-icon icon="communication:contacts" item-icon></iron-icon>
+                    </paper-icon-item>
+				</paper-menu>
+			</paper-header-panel>
+
+			<paper-header-panel main mode="seamed">
+				<paper-toolbar id="main-header">
 					<paper-icon-button id="navicon" icon="menu"></paper-icon-button>
-					<core-item id="toolbar-title" icon="info" label="About us"></core-item>
-				</core-toolbar>
+                    <paper-icon-item id="header-bar" data-menu="about">
+                        <div id="header-title"></div>
+                        <iron-icon id="header-icon" icon="info" item-icon></iron-icon>
+                    </paper-icon-item>
+				</paper-toolbar>
                 <lab-content></lab-content>
-			</core-header-panel>
-		</core-drawer-panel>
-		<paper-fab-menu id="fab-menu" icon="more-vert" closeIcon="close" duration="0.2">
-			<paper-fab-menu-item icon="language" color="green;" tooltip="Switch language"></paper-fab-menu-item>
-			<paper-fab-menu-item icon="mail" color="orange;" tooltip="Mail to us" href="mailto:jsleu@mail.ntust.edu.tw"></paper-fab-menu-item>
-		</paper-fab-menu>
-
-		<core-ajax id="lang-ajax" url="lang" handleAs="json"></core-ajax>
+			</paper-header-panel>
+		</paper-drawer-panel>
 	</body>
 </html>

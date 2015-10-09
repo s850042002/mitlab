@@ -1,3 +1,4 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="about-page.html">
 <link rel="import" href="news-list.html">
 <link rel="import" href="professor-page.html">
@@ -6,41 +7,72 @@
 <link rel="import" href="project-page.html">
 <link rel="import" href="contact-page.html">
 
-<polymer-element name="lab-content" attributes="show content languages" noscript>
+<dom-module id="lab-content">
 	<template>
 		<style>
 			:host {
 				display: block;
-				font-size: 1em;
-				font-weight: 500;
-				font-family: "RobotoDraft",Helvetica,Arial,sans-serif;
-				width: 100%;
-			}
-			.info {
-				padding: 10px;
+				font-family: 'Noto Sans', sans-serif;
 			}
 		</style>
 
-		<div id="about-us" class="info" hidden?="{{show != 'about'}}">
+		<div id="about" class="page">
 			<about-page content="{{content.about}}"></about-page>
         </div>
-		<div id="news" class="info" hidden?="{{show != 'news'}}">
+		<div id="news" class="page">
 			<news-list languages="{{languages}}"></news-list>
 		</div>
-		<div id="professor" class="info" hidden?="{{show != 'prof'}}">
+		<div id="professor" class="page">
 			<professor-page languages="{{languages}}"></professor-page>
     	</div>
-		<div id="members" hidden?="{{show != 'members'}}">
+		<div id="members" class="page">
 			<member-page content="{{content.members}}"></member-page>
 		</div>
-		<div id="publications" hidden?="{{show != 'publications'}}">
+		<div id="publications" class="page" >
 			<paper-page></paper-page>
 		</div>
-		<div id="projects" hidden?="{{show != 'projects'}}">
+		<div id="projects" class="page">
 			<project-page></project-page>
 		</div>
-		<div id="contact" hidden?="{{show != 'contacts'}}">
-			<contact-page languages="{{languages}}" style="margin: 0 auto; margin-top: 20px;"></contact-page>
+		<div id="contact" class="page">
+			<contact-page languages="{{languages}}"></contact-page>
 		</div>
 	</template>
-</polymer-element>
+
+    <script>
+        Polymer({
+            // ELEMENT
+            is: 'lab-content',
+            properties:{
+                page:{
+                    type: String,
+					value: "about",
+					observer: '_pageChanged'
+                },
+                content:{
+                    type: Object
+                },
+                languages:{
+                    type: String,
+					value: "tw"
+                }
+            },
+			_pageChanged: function(newValue, oldValue){
+				var pages = Polymer.dom(this.root).querySelectorAll(".page");
+				pages.forEach(function(element){
+					if(element.id == newValue){
+						element.style.display = '';
+
+						// 解決一開始 news 隱藏時無法顯示 list 的情況
+						//
+						if(newValue == "news"){
+							this.$$("news-list").setAttribute("focus", true);
+						}
+					}else{
+						element.style.display = 'none';
+					}
+				}.bind(this));
+			}
+        });
+    </script>
+</dom-module>

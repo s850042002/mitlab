@@ -1,54 +1,98 @@
-<link rel="import" href="paper-card.html">
-<link rel="import" href="post-service.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icons/editor-icons.html">
 
-<polymer-element name="paper-page">
+<dom-module id="paper-page">
     <template>
         <style>
+            :host{
+                --paper-tabs-selection-bar-color: white;
+                --paper-tab-ink: white;
+            }
+            paper-tabs{
+                background-color: #00bcd4;
+                color: #fff;
+                width: 100%;
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+            }
+            #content{
+                text-align: center;
+            }
             paper-card {
                 width: 80%;
-                margin: 0 auto;
-                margin-top: 10px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                text-align: left;
             }
             paper-card:hover{
                 background-color: #e0e0e0;
             }
-            paper-tabs::shadow #selectionBar{
-                background-color: #56BA89;
+            .card-header {
+                padding: 20px;
+                font-weight: 300;
             }
-            paper-tab::shadow #ink {
-                color: #56BA89;
+            .icon{
+                margin-right: 20px;
+                min-width: 24px;
+                min-height: 24px;
             }
         </style>
 
-        <paper-tabs selected="0">
-            <paper-tab id="journal" on-tap="{{paperTap}}">Journal papers ({{journal_count}})</paper-tab>
-            <paper-tab id="conference" on-tap="{{paperTap}}">Conference papers ({{conference_count}})</paper-tab>
+        <paper-tabs selected="{{paperType}}">
+            <paper-tab id="journal"><span>Journal papers &nbsp</span>{{journal_count}}</paper-tab>
+            <paper-tab id="conference"><span>Conference papers &nbsp</span>{{conference_count}}</paper-tab>
         </paper-tabs>
-        <post-service posts="{{journal_papers}}" url="journal_papers.json" count="{{journal_count}}"></post-service>
-        <post-service posts="{{conference_papers}}" url="conference_papers.json" count="{{conference_count}}"></post-service>
-        <template repeat="{{journal_paper in journal_papers}}">
-            <paper-card hidden?="{{paperType != journal_paper.type}}">
-                <span>{{journal_paper.papername}}</span>
-            </paper-card>
-        </template>
-        <template repeat="{{conference_paper in conference_papers}}">
-            <paper-card hidden?="{{paperType != conference_paper.type}}">
-                <span>{{conference_paper.papername}}</span>
-            </paper-card>
-        </template>
 
+        <iron-ajax id="ajax" url="/content/journal_papers.json" auto on-response="_journalResponseHandler" handleAs="json"></iron-ajax>
+        <iron-ajax id="ajax" url="/content/conference_papers.json" auto on-response="_conferenceResponseHandler" handleAs="json"></iron-ajax>
+
+        <div id="content">
+            <div id="journal-cards" hidden="{{paperType}}">
+            <template is="dom-repeat" items="{{journals}}" as="journal">
+                <paper-card elevation="4" class="journal-card">
+                    <div class="card-header">
+                        <iron-icon class="icon" icon="editor:border-color"></iron-icon>
+                        <span>{{journal.papername}}</span>
+                    </div>
+                </paper-card>
+            </template>
+            </div>
+
+            <div id="conference-cards" hidden="{{!paperType}}">
+            <template is="dom-repeat" items="{{conferences}}" as="conference">
+                <paper-card elevation="3" class="conference-card">
+                    <div class="card-header">
+                        <iron-icon class="icon" icon="editor:border-color"></iron-icon>
+                        <span>{{conference.papername}}</span>
+                    </div>
+                </paper-card>
+            </template>
+            </div>
+        </div>
     </template>
     <script>
-        Polymer('paper-page', {
-            paperType: {
-                value: ""
+        Polymer({
+            is: 'paper-page',
+            properties: {
+                paperType: {
+                    type: Number,
+                    value: 0
+                }
             },
-            ready: function(){
-                this.paperType = "journal";
+            _journalResponseHandler: function(e){
+                var data = e.detail.response;
+                this.journal_count = data.length;
+                this.journals = data;
             },
-            paperTap: function(event, detail, sender){
-                this.paperType = sender.id;
+            _conferenceResponseHandler: function(e){
+                var data = e.detail.response;
+                this.conference_count = data.length;
+                this.conferences = data;
             }
         });
     </script>
-</polymer-element>
+</dom-module>

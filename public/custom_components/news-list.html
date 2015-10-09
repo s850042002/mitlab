@@ -1,10 +1,11 @@
-<link rel="import" href="../bower_components/core-ajax/core-ajax.html">
-<link rel="import" href="../bower_components/core-scroll-threshold/core-scroll-threshold.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-list/iron-list.html">
 
-<polymer-element name="news-list" attributes="languages">
+<dom-module id="news-list">
 	<template>
 		<style>
-        #scroller {
+        iron-list {
             height: 100%;
             overflow: auto;
         }
@@ -20,6 +21,7 @@
 			margin-top: 18px;
 			font-size: 0.7rem;
 			font-weight: 300;
+            text-align: right;
 		}
 		.subject{
 			font-weight: 600;
@@ -29,36 +31,45 @@
 		}
 		</style>
 
-        <core-ajax id="ajax" url="news.json" on-core-response="{{responseHandler}}" handleAs="json"></core-ajax>
-        <core-scroll-threshold id="threshold" scrollTarget="{{$.scroller}}" lowerThreshold="100" on-lower-trigger="{{loadMore}}" fit></core-scroll-threshold>
-        <div id="scroller" fit>
-            <template repeat="{{d in data}}">
-                <div class="item" layout horizontal center>
-                    <div layout vertical flex>
-                        <div class="subject" hidden?="{{languages != 'tw'}}">{{d.tw}}</div>
-                        <div class="subject" hidden?="{{languages != 'en'}}">{{d.en}}</div>
-                        <div self-end class="time">{{d.time}}</div>
+        <iron-ajax id="ajax" url="/content/news.json" auto on-response="_responseHandler" handleAs="json"></iron-ajax>
+        <iron-list id="news-list" as="news">
+            <template>
+                <div>
+                    <div class="item">
+                        <div id="tw-content" class="subject">[[news.tw]]</div>
+                        <div id="en-content" class="subject">[[news.en]]</div>
+                        <div class="time">[[news.time]]</div>
                     </div>
                 </div>
             </template>
-            <!--div hidden?="{{!$.threshold.lowerTriggered}}">Please wait...</div-->
-        </div>
+        </iron-list>
 	</template>
-    <script>
-        Polymer('news-list', {
-            ready: function(){
-                this.ajax = this.$.ajax;
-                this.ajax.go();
-            },
-            responseHandler:function(e){
-                this.data = e.detail.response;
-            },
-            loadMore: function() {
-                console.log('load more');
-                setTimeout(function() {
 
-                }, 500);
+    <script>
+        Polymer({
+            is: 'news-list',
+            properties: {
+                languages: {
+                    type: String,
+                    observer: '_languageChanged'
+                },
+                focus:{
+                    type: Boolean,
+                    observer: '_focusChanged'
+                }
+            },
+            _responseHandler: function(e){
+                var data = e.detail.response;
+                this.$$("#news-list").items = data;
+            },
+            _focusChanged: function(newValue, oldValue){
+                if(newValue){
+                    this.$$("#news-list").fire('resize');
+                }
+            },
+            _languageChanged: function(newValue, oldValue){
+
             }
         });
     </script>
-</polymer-element>
+</dom-module>

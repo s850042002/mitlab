@@ -1,51 +1,130 @@
-<link rel="import" href="member-card.html">
-<link rel="import" href="post-service.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
 
-<polymer-element name="member-page" attributes="content">
+<dom-module id="member-page">
     <template>
         <style>
-            paper-tabs::shadow #selectionBar{
-                background-color: #56BA89;
+            :host{
+                --paper-tabs-selection-bar-color: white;
+                --paper-tab-ink: white;
             }
-            paper-tab::shadow #ink {
-                color: #56BA89;
+            paper-tabs{
+                background-color: #00bcd4;
+                color: #fff;
+                width: 100%;
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
             }
-            member-card {
+            #content{
+                text-align: center;
+            }
+            paper-card {
                 width: 80%;
-                margin: 0 auto;
-                margin-top: 10px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                text-align: left;
+            }
+            .card-header{
+                display: inline-block;
+                font-size: 160%;
+                position: absolute;
+                top: 50px;
+            }
+            .card-content{
+                padding: 20px;
+            }
+            .card-detail{
+                margin-top: 20px;
+            }
+            .avatar{
+                width: 70px;
+                border-radius: 50%;
+                margin: 10px;
             }
         </style>
 
-        <paper-tabs selected="0">
-            <paper-tab id="master" on-tap="{{memberTap}}">{{content[0]}} (3)</paper-tab>
-            <paper-tab id="ms-students" on-tap="{{memberTap}}">{{content[1]}} (19)</paper-tab>
-            <paper-tab id="graduated" on-tap="{{memberTap}}">{{content[2]}} (27)</paper-tab>
+        <iron-ajax id="ajax" url="/content/members.json" auto on-response="_responseHandler" handleAs="json"></iron-ajax>
+        <paper-tabs selected="{{tabSelected}}">
+            <paper-tab id="master">{{content.0}}</paper-tab>
+            <paper-tab id="ms-students">{{content.1}}</paper-tab>
+            <paper-tab id="graduated">{{content.2}}</paper-tab>
         </paper-tabs>
-        <post-service posts="{{members}}" url="members.json"></post-service>
-        <template repeat="{{member in members}}">
-            <member-card hidden?="{{idd != member.id}}">
-                <img src="{{member.avatar}}">
-                <h2>{{member.membername}}</h2>
-                <span class="study">{{member.study}}</span>
-                <span class="year">{{member.year}}</span>
-                <span class="email">{{member.email}}</span>
-                <span class="other">{{member.other}}</span>
-            </member-card>
-        </template>
 
+        <div id="content">
+            <template is="dom-repeat" items="{{members}}" on-dom-change="domChange">
+                <paper-card elevation="4" class="{{item.id}}">
+                    <div class="card-content">
+                        <img class="avatar" src="{{item.avatar}}">
+                        <div class="card-header">{{item.membername}}</div>
+                        <div class="card-detail">Study: <span>{{item.study}}</span></div>
+                        <div class="card-detail">Year: <span>{{item.year}}</span></div>
+                        <div class="card-detail">Email: <span>{{item.email}}</span></div>
+                        <div class="card-detail">Other: <span>{{item.other}}</span></div>
+                    </div>
+                </paper-card>
+            </template>
+        </div>
     </template>
     <script>
-        Polymer('member-page', {
-            idd: {
-                value: ""
+        Polymer({
+            is: "member-page",
+            properties: {
+                content: {
+                    type: Object
+                },
+                members:{
+                    type: Array
+                },
+                tabSelected:{
+                    type: Number,
+                    observer: "_tabChanged"
+                }
             },
-            ready: function(){
-                this.idd = "master";
+            // 只會執行一次, 為了在首次進網頁時, paper-card 要先過濾一次, 不然 paper-card 會全部出現 (所有members)
+            // 當template dom-repeat 中的 dom tree 有改變時會打出 dom-change event, 利用這個 event 讓所以有的paper-card
+            // 準備好後再改變 tab, 觸發_tabChanged
+            //
+            domChange: function(){
+                this.tabSelected = 0;
             },
-            memberTap: function(event, detail, sender){
-                this.idd = sender.id;
+            _tabChanged: function(newValue, oldValue){
+                var paperCard = Polymer.dom(this.root).querySelectorAll("paper-card");
+                switch (this.tabSelected){
+                    case 0:
+                        paperCard.forEach(function(element){
+                            if(element.class == "master"){
+                                element.style.display = '';
+                            }else{
+                                element.style.display = 'none';
+                            }
+                        });
+                        break;
+                    case 1:
+                        paperCard.forEach(function(element){
+                            if(element.class == "ms-students"){
+                                element.style.display = '';
+                            }else{
+                                element.style.display = 'none';
+                            }
+                        });
+                        break;
+                    case 2:
+                        paperCard.forEach(function(element){
+                            if(element.class == "graduated"){
+                                element.style.display = '';
+                            }else{
+                                element.style.display = 'none';
+                            }
+                        });
+                        break
+                }
+            },
+            _responseHandler: function(e){
+                var data = e.detail.response;
+                this.members = data;
             }
         });
     </script>
-</polymer-element>
+</dom-module>
