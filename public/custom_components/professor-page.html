@@ -54,7 +54,7 @@
         </style>
 
         <div id="content">
-            <paper-card elevation="3">
+            <paper-card class="zh-TW-content" elevation="3">
                 <div class="card-content">
                     <img src="../images/professor.jpg">
                     <h2>呂政修 教授</h2>
@@ -70,7 +70,7 @@
                 </div>
             </paper-card>
 
-            <paper-card elevation="3">
+            <paper-card class="en-US-content" elevation="3">
                 <div class="card-content">
                     <img src="../images/professor.jpg">
                     <h2>Professor Jenq-Shiou Leu</h2>
@@ -85,7 +85,7 @@
                 </div>
             </paper-card>
 
-            <paper-card elevation="3">
+            <paper-card class="zh-TW-content" elevation="3">
                 <div class="research-title">現職及經歷</div>
                 <paper-item>
                     <h4 class="time">2014/02</h4>
@@ -145,7 +145,7 @@
                 </paper-item>
             </paper-card>
 
-            <paper-card elevation="3">
+            <paper-card class="zh-TW-content" elevation="3">
                 <div class="research-title">榮譽及獎勵</div>
                 <paper-item>
                     <h4 class="time">2015</h4>
@@ -179,7 +179,7 @@
                 </paper-item>
             </paper-card>
 
-            <paper-card elevation="3">
+            <paper-card class="en-US-content" elevation="3">
                 <div class="research-title">Experiences</div>
                 <paper-item>
                     <h4 class="time">2014/02</h4>
@@ -240,18 +240,28 @@
             properties: {
                 languages: {
                     type: String,
-                    value: 'tw'
+                    observer: '_languageChanged'
                 }
             },
-            _journalResponseHandler: function(e){
-                var data = e.detail.response;
-                this.journal_count = data.length;
-                this.journals = data;
-            },
-            _conferenceResponseHandler: function(e){
-                var data = e.detail.response;
-                this.conference_count = data.length;
-                this.conferences = data;
+            _languageChanged: function(newLanguage, oldLanguage){
+                var zhTWContent = Polymer.dom(this.root).querySelectorAll(".zh-TW-content");
+                var enUSContent = Polymer.dom(this.root).querySelectorAll(".en-US-content");
+                if(newLanguage === "zh-TW"){
+                    zhTWContent.forEach(function(element){
+                        element.style.display = '';
+                    });
+                    enUSContent.forEach(function(element){
+                        element.style.display = 'none';
+                    });
+                }
+                else{
+                    zhTWContent.forEach(function(element){
+                        element.style.display = 'none';
+                    });
+                    enUSContent.forEach(function(element){
+                        element.style.display = '';
+                    });
+                }
             }
         });
     </script>

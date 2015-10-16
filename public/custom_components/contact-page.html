@@ -8,9 +8,6 @@
 			margin: 0 auto;
 			background-color: white;
 		}
-		address{
-			margin: 10px;
-		}
 		#info {
 			width: 80%;
 			padding: 20px;
@@ -28,12 +25,6 @@
 	        width: 100% !important;
 	        height: 100% !important;
 	    }
-		@media (min-width: 800px){
-			.google-maps {
-				margin: 0 auto;
-				width: 80%;
-			}
-		}
 		</style>
 
 		<div class="google-maps">
@@ -43,14 +34,14 @@
         </div>
 
 		<div id="info">
-			<address>
+			<address class="zh-TW-content">
 				10607台北市大安區基隆路4段43號<br>
 				資訊技術行動化實驗室 EE-705-6<br>
 				聯絡電話:+886-2-2733-3141<br>
 				傳真電話:+886-2-2733-7214<br>
 				E-mail: <a href="mailto:jsleu@mail.ntust.edu.tw">jsleu@mail.ntust.edu.tw</a>
 			</address>
-			<address>
+			<address class="en-US-content">
 				NO.43, SEC. 4, KEELUNG RD.,<br>
 				DA’AN DIST., TAIPEI 106, TAIWAN<br>
 				(R.O.C.)NTUST EE-705-6<br>
@@ -63,11 +54,31 @@
 
 	<script>
 		Polymer({
-			// ELEMENT
 			is: 'contact-page',
 			properties:{
 				languages:{
-					type: String
+					type: String,
+					observer: "_languageChanged"
+				}
+			},
+			_languageChanged: function(newLanguage, oldLanguage){
+				var zhTWContent = Polymer.dom(this.root).querySelectorAll(".zh-TW-content");
+				var enUSContent = Polymer.dom(this.root).querySelectorAll(".en-US-content");
+				if(newLanguage === "zh-TW"){
+					zhTWContent.forEach(function(element){
+						element.style.display = '';
+					});
+					enUSContent.forEach(function(element){
+						element.style.display = 'none';
+					});
+				}
+				else{
+					zhTWContent.forEach(function(element){
+						element.style.display = 'none';
+					});
+					enUSContent.forEach(function(element){
+						element.style.display = '';
+					});
 				}
 			}
 		});

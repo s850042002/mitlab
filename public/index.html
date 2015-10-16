@@ -11,6 +11,7 @@
         <link rel="import" href="bower_components/iron-icons/communication-icons.html">
         <link rel="import" href="bower_components/iron-icons/image-icons.html">
         <link rel="import" href="bower_components/iron-icons/social-icons.html">
+		<link rel="import" href="bower_components/iron-icons/av-icons.html">
         <link rel="import" href="bower_components/iron-icon/iron-icon.html">
         <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
         <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
@@ -18,6 +19,8 @@
         <link rel="import" href="bower_components/paper-menu/paper-menu.html">
         <link rel="import" href="bower_components/paper-item/paper-icon-item.html">
         <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+		<link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
+		<link rel="import" href="bower_components/paper-fab-transitions/paper-fab-speed-dial.html">
 		<link rel="import" href="custom_components/lab-content.html">
 
 		<style>
@@ -32,7 +35,7 @@
 			background-color: #ffffff;
 		}
 		#header-title{
-			font-size: 120%;
+			font-size: 0.8em;
 		}
 		#nav-header {
 			background-color: #000000;
@@ -56,6 +59,18 @@
 		.menu-item-text{
 			font-size: 120%;
 		}
+		#switch-languages-button{
+			position: absolute;
+			bottom: 5px;
+			left: 5px;
+		}
+		</style>
+
+		<style is="custom-style">
+			.small-icons {
+				--iron-icon-height: 24px;
+				--iron-icon-width: 24px;
+			}
 		</style>
 
 		<script>
@@ -63,61 +78,76 @@
 				var paperDrawerPanel = document.querySelector('paper-drawer-panel');
 				var labContent = document.querySelector('lab-content');
                 var headerTitle = document.querySelector('#header-title');
-                var headerIcon = document.querySelector('#header-icon');
 				var drawerPanel = document.querySelector('#drawerPanel');
 				var menuItem = document.querySelectorAll('.menu-item');
                 var menuItemText = document.querySelectorAll('.menu-item-text');
 				var navIcon = document.querySelector('#navicon');
-				var langAjax = document.querySelector('#lang-ajax');
+				var detectLangAjax = document.querySelector('#detect-language-ajax');
+				var switchLangAjax = document.querySelector('#switch-language-ajax');
+				var slb = document.querySelector('#switch-languages-button');
+				var currentLang;
+
+				function setContent(content){
+					currentLanguage = content["language"];
+					var menu = content["menu"].replace('[', '').replace(']', '').replace(/\'/g, '').split(',');
+					for(var i= 0; i < menuItemText.length; i++){
+						menuItemText[i].textContent = menu[i];
+					}
+					labContent.content = content;
+				}
 
 				function init(){
-					var data = {"lang": "tw"};
-					langAjax.params = data;
-					langAjax.generateRequest();
-
-					for(i = 0; i < menuItem.length; i++){
+					for(var i = 0; i < menuItem.length; i++){
 						menuItem[i].addEventListener('click', function() {
 							paperDrawerPanel.togglePanel();
 							var currentPage = this.getAttribute("data-menu");
-							headerTitle.textContent = this.childNodes[4].textContent;
-							var iconElement = this.getElementsByTagName('iron-icon')[0];
-							headerIcon.setAttribute('icon', iconElement.getAttribute("icon"));
 							labContent.setAttribute('page', currentPage);
 						});
 					}
 
-					langAjax.addEventListener('response', function(e){
-						var langContent = e.detail.response;
-						var menu = langContent['menu'].replace('[', '').replace(']', '').replace(/\'/g, '').split(',');
-						for( i= 0; i < menuItemText.length; i++){
-							menuItemText[i].textContent = menu[i];
-						}
-						labContent.content = langContent;
+					detectLangAjax.addEventListener('response', function(e){
+						var content = e.detail.response;
+						setContent(content);
 					});
 
-					langAjax.addEventListener('error', function(e){
-						console.log(e.detail.response);
+					switchLangAjax.addEventListener('response', function(e){
+						var content = e.detail.response;
+						setContent(content);
 					});
 
 					navIcon.addEventListener('click', function() {
 						drawerPanel.togglePanel();
 					});
+
+					labContent.addEventListener('pageChanged', function(e){
+						var page = e.detail.page;
+						var pageText;
+						for(var i = 0; i < menuItem.length; i++){
+							if(page === menuItem[i].getAttribute("data-menu")){
+								pageText = menuItem[i].querySelector(".menu-item-text").textContent;
+								break;
+							}
+						}
+						headerTitle.textContent = pageText;
+					});
+
+					slb.addEventListener('click', function(e) {
+						currentLang = (currentLang === "en-US") ? "zh-TW" : "en-US";
+						data = {"lang": currentLang};
+						switchLangAjax.params = data;
+						switchLangAjax.generateRequest();
+					});
 				}
 
 				init();
 
-				/*langButton.addEventListener('click', function(e) {
-					currentLang = (currentLang === "en") ? "tw" : "en";
-					var data = {"lang": currentLang};
-					langAjax.params = data;
-					langAjax.generateRequest();
-				});*/
 			});
 		</script>
 	</head>
 
 	<body>
-		<iron-ajax id="lang-ajax" url="lang" handleAs="json"></iron-ajax>
+		<iron-ajax id="detect-language-ajax" auto url="detectlanguage" handleAs="json"></iron-ajax>
+		<iron-ajax id="switch-language-ajax" url="switchlanguage" handleAs="json"></iron-ajax>
 
 		<paper-drawer-panel id="drawerPanel" responsive-width="800px">
 			<paper-header-panel drawer mode="seamed">
@@ -144,7 +174,7 @@
                     </paper-icon-item>
                     <paper-icon-item class="menu-item" data-menu="publications">
                         <div class="menu-item-text"></div>
-                        <iron-icon icon="social:public" item-icon></iron-icon>
+                        <iron-icon icon="av:library-books" item-icon></iron-icon>
                     </paper-icon-item>
                     <paper-icon-item class="menu-item" data-menu="projects">
                         <div class="menu-item-text"></div>
@@ -155,15 +185,13 @@
                         <iron-icon icon="communication:contacts" item-icon></iron-icon>
                     </paper-icon-item>
 				</paper-menu>
+				<paper-icon-button id="switch-languages-button" class="small-icons" icon="social:public"></paper-icon-button>
 			</paper-header-panel>
 
 			<paper-header-panel main mode="seamed">
 				<paper-toolbar id="main-header">
 					<paper-icon-button id="navicon" icon="menu"></paper-icon-button>
-                    <paper-icon-item id="header-bar" data-menu="about">
-                        <div id="header-title">關於我們</div>
-                        <iron-icon id="header-icon" icon="info" item-icon></iron-icon>
-                    </paper-icon-item>
+					<div id="header-title"></div>
 				</paper-toolbar>
                 <lab-content></lab-content>
 			</paper-header-panel>

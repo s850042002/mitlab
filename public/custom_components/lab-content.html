@@ -20,10 +20,10 @@
 			<about-page content="{{content.about}}"></about-page>
         </div>
 		<div id="news" class="page">
-			<news-list languages="{{languages}}"></news-list>
+			<news-list languages="{{language}}"></news-list>
 		</div>
 		<div id="professor" class="page">
-			<professor-page languages="{{languages}}"></professor-page>
+			<professor-page languages="{{language}}"></professor-page>
     	</div>
 		<div id="members" class="page">
 			<member-page content="{{content.members}}"></member-page>
@@ -35,7 +35,7 @@
 			<project-page></project-page>
 		</div>
 		<div id="contact" class="page">
-			<contact-page languages="{{languages}}"></contact-page>
+			<contact-page languages="{{language}}"></contact-page>
 		</div>
 	</template>
 
@@ -50,14 +50,20 @@
 					observer: '_pageChanged'
                 },
                 content:{
-                    type: Object
+                    type: Object,
+					observer: '_contentChanged'
                 },
-                languages:{
-                    type: String,
-					value: "tw"
+                language:{
+                    type: String
                 }
             },
+			_contentChanged: function(newValue, oldValue) {
+				var currentLanguage = newValue["language"];
+				this.language = currentLanguage;
+				this.fire("pageChanged", {page: this.page});
+			},
 			_pageChanged: function(newValue, oldValue){
+				this.fire("pageChanged", {page: newValue});
 				var pages = Polymer.dom(this.root).querySelectorAll(".page");
 				pages.forEach(function(element){
 					if(element.id == newValue){

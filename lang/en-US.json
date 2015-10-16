@@ -1,0 +1,17 @@
+{
+    "language": "en-US",
+    "menu": "['About us', 'News', 'Professor', 'Members', 'Publication', 'Projects', 'Contacts']",
+    "about":{
+      "intro": ["The MITLAB is located at NTUST EE705-6, 4 college students, 11 graduated students and 2 doctor students.",
+        "Conference and publication",
+        "We expect anyone who is interested in mobile, home caring system and cloud computing to join us"],
+      "research": [
+        {"title": "Heterogeneous Network Related Topics", "content": "To offer a more efficient wireless data access service, disparate wireless networks complement each other to provide a higher wireless accessibility. For example, the WLAN network inter-works with the cellular network. Incorporating heterogeneous networks into the network service group could make interactions in-between more complicated. We focus on the challenges while integrating heterogeneous networks."},
+        {"title": "Mobile Application/System Design", "content": "Thanks to the advancement of wireless technology, mobile services increasingly catch more attention in the post era of the booming voice service. A typical mobile wireless service comprises three parts: services, user devices and networks. Creating mobile broadband services over heterogeneous bearers (2.5G, 3G, WLAN or WiMAX) may face the problem about a great diversity of combinations in service flows. We focus on the challenges about designing mobile services and architectures."},
+        {"title": "P2P network", "content": "P2P networks and cloud computing system has been applying in distributed resources sharing system in recent years. The primary challenge is to efficiently searching the resources and information, including verbose searching time, duplicate information and low success rate. On the other hand, the most well-known use of P2P networks is file sharing. Past research usually put emphasis on hot resources searching without considering the speed of peers. The thriving of the heterogeneous network causes diversity of transmitting situations, therefore we are devoted to studying the efficiency of file sharing and searching resources in heterogeneous P2P network."},
+        {"title": "Sensor network", "content": "Sensor networks are pervasive in our daily life, we can see more integrations from various fields in recent years. The direction of this study should be adjusted based on the protocols utilized by different fields. Moreover, we emphasized the efficiency of sensor networks in pratical environments."}
+      ]
+    },
+    "members":["Ph.D. Students", "M.S. Students", "Graduates"],
+    "version": "0.0.2"
+}

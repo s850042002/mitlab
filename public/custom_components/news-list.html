@@ -23,9 +23,6 @@
 			font-weight: 300;
             text-align: right;
 		}
-		.subject{
-			font-weight: 600;
-		}
 		.item:hover{
 			background: #e0e0e0;
 		}
@@ -36,8 +33,8 @@
             <template>
                 <div>
                     <div class="item">
-                        <div id="tw-content" class="subject">[[news.tw]]</div>
-                        <div id="en-content" class="subject">[[news.en]]</div>
+                        <div class="news-content zh-TW-content">[[news.zh-TW]]</div>
+                        <div class="news-content en-US-content">[[news.en-US]]</div>
                         <div class="time">[[news.time]]</div>
                     </div>
                 </div>
@@ -65,10 +62,32 @@
             _focusChanged: function(newValue, oldValue){
                 if(newValue){
                     this.$$("#news-list").fire('resize');
+                    this._changeLanguage(this.languages);
                 }
             },
-            _languageChanged: function(newValue, oldValue){
-
+            _languageChanged: function(newLanguage, oldLanguage){
+                this.$$("#news-list").fire('resize'); // 排版才會正常
+                this._changeLanguage(newLanguage);
+            },
+            _changeLanguage: function(language){
+                var zhTWContent = Polymer.dom(this.root).querySelectorAll(".zh-TW-content");
+                var enUSContent = Polymer.dom(this.root).querySelectorAll(".en-US-content");
+                if(language === "zh-TW"){
+                    zhTWContent.forEach(function(element){
+                        element.style.display = '';
+                    });
+                    enUSContent.forEach(function(element){
+                        element.style.display = 'none';
+                    });
+                }
+                else{
+                    zhTWContent.forEach(function(element){
+                        element.style.display = 'none';
+                    });
+                    enUSContent.forEach(function(element){
+                        element.style.display = '';
+                    });
+                }
             }
         });
     </script>
