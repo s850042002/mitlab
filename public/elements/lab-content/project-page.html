@@ -1,0 +1,80 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="project-page">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+                font-weight: 700;
+            }
+
+            #content {
+                text-align: center;
+            }
+
+            paper-card {
+                width: 80%;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                text-align: left;
+            }
+
+            .card-header {
+                font-size: 180%;
+                font-weight: bold;
+                margin: 10px 0 20px 0;
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+
+            .card-detail {
+                margin: 20px 0 20px 0;
+            }
+
+            img {
+                width: 40%;
+                height: 40%;
+            }
+
+            @media (max-width: 800px) {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        </style>
+
+        <iron-ajax id="ajax" auto url="/content/projects.json" on-response="_responseHandler"
+                   handleAs="json"></iron-ajax>
+        <div id="content">
+            <template is="dom-repeat" items="{{projects}}">
+                <paper-card elevation="3">
+                    <div class="card-content">
+                        <div class="card-header">{{item.title}}</div>
+                        <img src="{{item.img}}">
+                        <div class="card-detail">{{item.detail}}</div>
+                    </div>
+                </paper-card>
+            </template>
+        </div>
+    </template>
+    <script>
+        Polymer({
+          is: 'project-page',
+          properties: {
+            projects: {
+              type: String
+            }
+          },
+          _responseHandler: function(e) {
+            this.projects = e.detail.response;
+          }
+        });
+    </script>
+</dom-module>

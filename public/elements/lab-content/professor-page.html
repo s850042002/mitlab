@@ -1,0 +1,278 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="professor-page">
+    <template>
+        <style>
+            paper-card {
+                width: 80%;
+                text-align: left;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            h2 {
+                display: inline-block;
+                position: absolute;
+                top: 80px;
+                margin: 0;
+                font-size: 1.8rem;
+                font-weight: 700;
+            }
+
+            img {
+                display: inline-block;
+                width: 120px;
+                border-radius: 50%;
+                margin: 10px;
+            }
+
+            #content {
+                text-align: center;
+            }
+
+            .card-content {
+                padding: 30px;
+            }
+
+            .info-content {
+                margin-left: 7px;
+            }
+
+            .time {
+                margin-right: 30px;
+                padding: 10px;
+                border: solid #ccc 1px;
+            }
+
+            .research-title {
+                padding: 20px;
+                color: #6B5344;
+                font-size: 1.2em;
+                font-weight: 900;
+            }
+
+            .duration {
+                margin-top: 10px;
+                font-size: 0.7rem;
+            }
+        </style>
+
+        <div id="content">
+            <paper-card class="zh-TW-content" elevation="3">
+                <div class="card-content">
+                    <img src="../../images/professor.jpg">
+                    <h2>呂政修 教授</h2>
+                    <p class="info-title">學業經歷:<span class="info-content">國立清華大學博士</span></p>
+                    <p class="info-title">辦公地點:<span class="info-content">台灣科技大學 電資大樓 EE-708</span></p>
+                    <p class="info-title">研究領域:<span class="info-content">異質網路整合、行動通訊服務與平台設計、分散式計算(點對點、雲端計算)、節能運算</span>
+                    </p>
+                    <p class="info-title">關鍵字詞:<span class="info-content">異質網路、行動通訊服務、分散式計算</span></p>
+                    <p class="info-title">開授課程:<span class="info-content">微積分(上)(下), 行動無線通訊原理與實務, 雲端運算</span></p>
+                    <p class="info-title">會客時間:<span class="info-content">13:30-15:30(Mon.);10:30-12:30(Wed.);(or by appointment)</span>
+                    </p>
+                    <p class="info-title">聯絡信箱:<span class="info-content"><a href="mailto:jsleu@mail.ntust.edu.tw">jsleu@mail.ntust.edu.tw</a></span>
+                    </p>
+                    <p class="info-title">聯絡電話:<span class="info-content">886-2-27376386</span></p>
+                    <p class="info-title">傳真電話:<span class="info-content">886-2-27376424</span></p>
+                </div>
+            </paper-card>
+
+            <paper-card class="en-US-content" elevation="3">
+                <div class="card-content">
+                    <img src="../../images/professor.jpg">
+                    <h2>Professor Jenq-Shiou Leu</h2>
+                    <p class="info-title">Academic:<span class="info-content">Dr. degree NTHU</span></p>
+                    <p class="info-title">Office:<span class="info-content">NTUST EE-708</span></p>
+                    <p class="info-title">Study:<span class="info-content">Research interests include mobile services over heterogeneous networks and heteroge-neous network integration.</span>
+                    </p>
+                    <p class="info-title">Key words:<span class="info-content">Heterogeneous Network Integration, Mobile Service and Platform Design, Distributed Computing(P2P, Cloud Computing), Power-Saving Computing, Application/System Design</span>
+                    </p>
+                    <p class="info-title">Courses:<span class="info-content">Calculus, Mobile Wireless Communication Principles and Practices</span>
+                    </p>
+                    <p class="info-title">Office Hours:<span class="info-content">13:30-15:30(Mon.);10:30-12:30(Wed.);(or by appointment)</span>
+                    </p>
+                    <p class="info-title">Phone:<span class="info-content">886-2-27376386</span></p>
+                    <p class="info-title">Fax:<span class="info-content">886-2-27376424</span></p>
+                </div>
+            </paper-card>
+
+            <paper-card class="zh-TW-content" elevation="3">
+                <div class="research-title">現職及經歷</div>
+                <paper-item>
+                    <h4 class="time">2014/02</h4>
+                    <paper-item-body two-line>
+                        <div>台灣科技大學電子工程系 教授</div>
+                        <div class="duration" secondary>2014.02~迄今</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">2014/01</h4>
+                    <paper-item-body two-line>
+                        <div>台灣科技大學電子工程系 副系主任</div>
+                        <div class="duration" secondary>2014.01~迄今</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">2011/02</h4>
+                    <paper-item-body two-line>
+                        <div>台灣科技大學電子工程系 副教授</div>
+                        <div class="duration" secondary>2011/02~2014/01</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">2007/02</h4>
+                    <paper-item-body two-line>
+                        <div>台灣科技大學電子工程系 助理教授</div>
+                        <div class="duration" secondary>2007/02~2011/01</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">2005/07</h4>
+                    <paper-item-body two-line>
+                        <div>台灣大哥大股份有限公司 產品技術處副理</div>
+                        <div class="duration" secondary>2005/07~2007/02</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">1997/05</h4>
+                    <paper-item-body two-line>
+                        <div>東信電訊股份有限公司行動服務處 專案副理</div>
+                        <div class="duration" secondary>1997/05~2005/06</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">1995/07</h4>
+                    <paper-item-body two-line>
+                        <div>理星科技股份有限公司 研發工程師</div>
+                        <div class="duration" secondary>1995/06~1997/04</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">1993/07</h4>
+                    <paper-item-body two-line>
+                        <div>海軍預官</div>
+                        <div class="duration" secondary>1993/07~1995/05</div>
+                    </paper-item-body>
+                </paper-item>
+            </paper-card>
+
+            <paper-card class="zh-TW-content" elevation="3">
+                <div class="research-title">榮譽及獎勵</div>
+                <paper-item>
+                    <h4 class="time">2015</h4>
+                    <paper-item-body>
+                        <div>新北市政府「地方產業創新研發推動計畫」(地方型SBIR)審查委員</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">2015</h4>
+                    <paper-item-body>
+                        <div>Editorial Board Member of Cyber-Physical Systems - Taylor & Francis</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">2013</h4>
+                    <paper-item-body>
+                        <div>國立台灣科技大學 教學優良獎</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">2010</h4>
+                    <paper-item-body>
+                        <div>國立台灣科技大學 教學優良獎</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">2009</h4>
+                    <paper-item-body>
+                        <div>榮獲名列2009年世界名人錄「Marquis Who's Who in the World」</div>
+                    </paper-item-body>
+                </paper-item>
+            </paper-card>
+
+            <paper-card class="en-US-content" elevation="3">
+                <div class="research-title">Experiences</div>
+                <paper-item>
+                    <h4 class="time">2014/02</h4>
+                    <paper-item-body two-line>
+                        <div>NTUST EE Professor</div>
+                        <div class="duration">2014.02~nowadays</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">2014/01</h4>
+                    <paper-item-body two-line>
+                        <div>NTUST EE Vice Chairperson</div>
+                        <div class="duration">2014.01~nowadays</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">2011/02</h4>
+                    <paper-item-body two-line>
+                        <div>NTUST EE Associate Professor</div>
+                        <div class="duration">2011.02~2014.01</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">2007/02</h4>
+                    <paper-item-body two-line>
+                        <div>NTUST EE Assistant Professor</div>
+                        <div class="duration">2007.02~2011.01</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">2005/07</h4>
+                    <paper-item-body two-line>
+                        <div>Assistant Manager in Taiwan Mobile</div>
+                        <div class="duration">2005.07~2007.02</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">1997/05</h4>
+                    <paper-item-body two-line>
+                        <div>Assistant Manager in Mobile Communications</div>
+                        <div class="duration">1997.05~2005.06</div>
+                    </paper-item-body>
+                </paper-item>
+                <paper-item>
+                    <h4 class="time">1995/06</h4>
+                    <paper-item-body two-line>
+                        <div>R&D Engineer in Rising Star Technology</div>
+                        <div class="duration">1995.06~1997.04</div>
+                    </paper-item-body>
+                </paper-item>
+            </paper-card>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+          is: 'professor-page',
+          properties: {
+            languages: {
+              type: String,
+              observer: '_languageChanged'
+            }
+          },
+          _languageChanged: function(newLanguage) {
+            var zhTWContent = Polymer.dom(this.root).querySelectorAll('.zh-TW-content');
+            var enUSContent = Polymer.dom(this.root).querySelectorAll('.en-US-content');
+            if (newLanguage === 'zh-TW') {
+              zhTWContent.forEach(function(element) {
+                element.style.display = '';
+              });
+              enUSContent.forEach(function(element) {
+                element.style.display = 'none';
+              });
+            } else {
+              zhTWContent.forEach(function(element) {
+                element.style.display = 'none';
+              });
+              enUSContent.forEach(function(element) {
+                element.style.display = '';
+              });
+            }
+          }
+        });
+    </script>
+</dom-module>

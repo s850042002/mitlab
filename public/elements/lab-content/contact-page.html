@@ -1,0 +1,89 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="contact-page">
+    <template>
+        <style>
+            :host {
+                display: block;
+                margin: 0 auto;
+                background-color: white;
+            }
+
+            #info {
+                width: 80%;
+                padding: 20px;
+            }
+
+            .google-maps {
+                position: relative;
+                padding-bottom: 75%;
+                height: 0;
+                overflow: hidden;
+            }
+
+            .google-maps iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100% !important;
+                height: 100% !important;
+            }
+        </style>
+
+        <div class="google-maps">
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.6187404403117!2d121.54165150000001!3d25.013067900000017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa2176c4c0ad%3A0x90db5e44ee29f455!2z5ZyL56uL6Ie654Gj56eR5oqA5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1440766066664"
+                        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="info">
+            <address class="zh-TW-content">
+                10607台北市大安區基隆路4段43號<br>
+                資訊技術行動化實驗室 EE-705-6<br>
+                聯絡電話:+886-2-2733-3141<br>
+                傳真電話:+886-2-2733-7214<br>
+                E-mail: <a href="mailto:jsleu@mail.ntust.edu.tw">jsleu@mail.ntust.edu.tw</a>
+            </address>
+            <address class="en-US-content">
+                NO.43, SEC. 4, KEELUNG RD.,<br>
+                DA’AN DIST., TAIPEI 106, TAIWAN<br>
+                (R.O.C.)NTUST EE-705-6<br>
+                Telephone:+886-2-2733-3141<br>
+                FAX:+886-2-2733-7214<br>
+                E-mail: <a href="mailto:jsleu@mail.ntust.edu.tw">jsleu@mail.ntust.edu.tw</a>
+            </address>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+          is: 'contact-page',
+          properties: {
+            languages: {
+              type: String,
+              observer: '_languageChanged'
+            }
+          },
+          _languageChanged: function(newLanguage) {
+            var zhTWContent = Polymer.dom(this.root).querySelectorAll('.zh-TW-content');
+            var enUSContent = Polymer.dom(this.root).querySelectorAll('.en-US-content');
+            if (newLanguage === 'zh-TW') {
+              zhTWContent.forEach(function(element) {
+                element.style.display = '';
+              });
+              enUSContent.forEach(function(element) {
+                element.style.display = 'none';
+              });
+            } else {
+              zhTWContent.forEach(function(element) {
+                element.style.display = 'none';
+              });
+              enUSContent.forEach(function(element) {
+                element.style.display = '';
+              });
+            }
+          }
+        });
+    </script>
+</dom-module>

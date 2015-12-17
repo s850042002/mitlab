@@ -1,0 +1,99 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="paper-page">
+    <template>
+        <style>
+            :host {
+                --paper-tabs-selection-bar-color: white;
+                --paper-tab-ink: white;
+            }
+
+            paper-tabs {
+                background-color: #00bcd4;
+                color: #fff;
+                width: 100%;
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+            }
+
+            #content {
+                text-align: center;
+            }
+
+            paper-card {
+                width: 80%;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                text-align: left;
+            }
+
+            paper-card:hover {
+                background-color: #e0e0e0;
+            }
+
+            .card-header {
+                padding: 20px;
+            }
+
+            .icon {
+                margin-right: 20px;
+                min-width: 24px;
+                min-height: 24px;
+            }
+        </style>
+
+        <paper-tabs selected="{{paperType}}">
+            <paper-tab id="journal"><span>Journal papers &nbsp</span>{{journalCount}}</paper-tab>
+            <paper-tab id="conference"><span>Conference papers &nbsp</span>{{conferenceCount}}</paper-tab>
+        </paper-tabs>
+
+        <iron-ajax id="ajax" url="/content/journal_papers.json" auto on-response="_journalResponseHandler"
+                   handleAs="json"></iron-ajax>
+        <iron-ajax id="ajax" url="/content/conference_papers.json" auto on-response="_conferenceResponseHandler"
+                   handleAs="json"></iron-ajax>
+
+        <div id="content">
+            <div id="journal-cards" hidden="{{paperType}}">
+                <template is="dom-repeat" items="{{journals}}" as="journal">
+                    <paper-card elevation="4" class="journal-card">
+                        <div class="card-header">
+                            <iron-icon class="icon" icon="editor:border-color"></iron-icon>
+                            <span>{{journal.papername}}</span>
+                        </div>
+                    </paper-card>
+                </template>
+            </div>
+
+            <div id="conference-cards" hidden="{{!paperType}}">
+                <template is="dom-repeat" items="{{conferences}}" as="conference">
+                    <paper-card elevation="3" class="conference-card">
+                        <div class="card-header">
+                            <iron-icon class="icon" icon="editor:border-color"></iron-icon>
+                            <span>{{conference.papername}}</span>
+                        </div>
+                    </paper-card>
+                </template>
+            </div>
+        </div>
+    </template>
+    <script>
+        Polymer({
+          is: 'paper-page',
+          properties: {
+            paperType: {
+              type: Number,
+              value: 0
+            }
+          },
+          _journalResponseHandler: function(e) {
+            var data = e.detail.response;
+            this.journalCount = data.length;
+            this.journals = data;
+          },
+          _conferenceResponseHandler: function(e) {
+            var data = e.detail.response;
+            this.conferenceCount = data.length;
+            this.conferences = data;
+          }
+        });
+    </script>
+</dom-module>
