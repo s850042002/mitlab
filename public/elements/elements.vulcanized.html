@@ -1,13 +1,5 @@
 <html><head><meta charset="UTF-8"><!--
 @license
-Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE
-The complete set of authors may be found at http://polymer.github.io/AUTHORS
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS
---><!--
-@license
 Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
 The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
@@ -10524,30 +10516,52 @@ if (!window.Promise) {
 </script>
 
 
+
+
 <style is="custom-style">
 
   :root {
+    /*
+     * Light background theme
+     */
+    --light-theme-background-color: #ffffff;
+    --light-theme-base-color: #000000;
+    --light-theme-text-color: #212121;
+    --light-theme-secondary-color: #737373;  /* for secondary text and icons */
+    --light-theme-disabled-color: #9b9b9b;  /* disabled/hint text */
+    --light-theme-divider-color: #dbdbdb;
 
-    --dark-primary-color: #303f9f;
+    /*
+     * Dark background theme
+     */
+    --dark-theme-background-color: #212121;
+    --dark-theme-base-color: #ffffff;
+    --dark-theme-text-color: #ffffff;
+    --dark-theme-secondary-color: #bcbcbc;  /* for secondary text and icons */
+    --dark-theme-disabled-color: #646464;  /* disabled/hint text */
+    --dark-theme-divider-color: #3c3c3c;
 
-    --default-primary-color: #3f51b5;
+    /*
+     * Primary and accent colors. Also see color.html for more colors.
+     */
+    --primary-color: #3f51b5;  /* --paper-indigo-500 */
+    --light-primary-color: #c5cae9;  /* --paper-indigo-100 */
+    --dark-primary-color: #303f9f;  /* --paper-indigo-700 */
 
-    --light-primary-color: #c5cae9;
+    --accent-color: #ff4081;  /* --paper-pink-a200 */
+    --light-accent-color: #ff80ab;  /* --paper-pink-a100 */
+    --dark-accent-color: #f50057;  /* --paper-pink-a400 */
 
-    --text-primary-color: #ffffff;
-
-    --accent-color: #ff4081;
-
-    --primary-background-color: #ffffff;
-
-    --primary-text-color: #212121;
-
-    --secondary-text-color: #757575;
-
-    --disabled-text-color: #bdbdbd;
-
-    --divider-color: #e0e0e0;
-
+    /*
+     * Deprecated values because of their confusing names.
+     */
+    --primary-text-color: var(--light-theme-text-color);
+    --text-primary-color: var(--dark-theme-text-color);
+    --primary-background-color: var(--light-theme-background-color);
+    --secondary-text-color: var(--light-theme-secondary-color);
+    --disabled-text-color:var(--light-theme-disabled-color);
+    --divider-color: var(--light-theme-divider-color);
+    --default-primary-color: var(--primary-color);
   }
 
 </style>
@@ -11516,6 +11530,24 @@ if (!window.Promise) {
 </script>
 
 
+
+
+<script>
+  /** @polymerBehavior Polymer.PaperItemBehavior */
+  Polymer.PaperItemBehaviorImpl = {
+    hostAttributes: {
+      role: 'option',
+      tabindex: '0'
+    }
+  };
+
+  /** @polymerBehavior */
+  Polymer.PaperItemBehavior = [
+    Polymer.IronButtonState,
+    Polymer.IronControlState,
+    Polymer.PaperItemBehaviorImpl
+  ];
+</script>
 <style is="custom-style">
 
   :root {
@@ -11839,25 +11871,6 @@ if (!window.Promise) {
 </style>
 
 
-<script>
-  /** @polymerBehavior Polymer.PaperItemBehavior */
-  Polymer.PaperItemBehaviorImpl = {
-    hostAttributes: {
-      role: 'option',
-      tabindex: '0'
-    }
-  };
-
-  /** @polymerBehavior */
-  Polymer.PaperItemBehavior = [
-    Polymer.IronControlState,
-    Polymer.IronButtonState,
-    Polymer.PaperItemBehaviorImpl
-  ];
-
-</script>
-
-
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700">
 <style is="custom-style">
@@ -11865,11 +11878,6 @@ if (!window.Promise) {
   :root {
 
     /* Shared Styles */
-
-    /*
-    Unfortunately, we can't use nested rules
-    See https://github.com/Polymer/polymer/issues/1399
-    */
     --paper-font-common-base: {
       font-family: 'Roboto', 'Noto', sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -11893,14 +11901,8 @@ if (!window.Promise) {
     /* Material Font Styles */
 
     --paper-font-display4: {
-      /* @apply(--paper-font-common-base) */
-      font-family: 'Roboto', 'Noto', sans-serif;
-      -webkit-font-smoothing: antialiased;
-
-      /* @apply(--paper-font-common-nowrap); */
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      @apply(--paper-font-common-base);
+      @apply(--paper-font-common-nowrap);
 
       font-size: 112px;
       font-weight: 300;
@@ -11909,14 +11911,8 @@ if (!window.Promise) {
     };
 
     --paper-font-display3: {
-      /* @apply(--paper-font-common-base) */
-      font-family: 'Roboto', 'Noto', sans-serif;
-      -webkit-font-smoothing: antialiased;
-
-      /* @apply(--paper-font-common-nowrap); */
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      @apply(--paper-font-common-base);
+      @apply(--paper-font-common-nowrap);
 
       font-size: 56px;
       font-weight: 400;
@@ -11925,10 +11921,7 @@ if (!window.Promise) {
     };
 
     --paper-font-display2: {
-      /* @apply(--paper-font-common-base) */
-      font-family: 'Roboto', 'Noto', sans-serif;
-      -webkit-font-smoothing: antialiased;
-
+      @apply(--paper-font-common-base);
 
       font-size: 45px;
       font-weight: 400;
@@ -11937,10 +11930,7 @@ if (!window.Promise) {
     };
 
     --paper-font-display1: {
-      /* @apply(--paper-font-common-base) */
-      font-family: 'Roboto', 'Noto', sans-serif;
-      -webkit-font-smoothing: antialiased;
-
+      @apply(--paper-font-common-base);
 
       font-size: 34px;
       font-weight: 400;
@@ -11949,10 +11939,7 @@ if (!window.Promise) {
     };
 
     --paper-font-headline: {
-      /* @apply(--paper-font-common-base) */
-      font-family: 'Roboto', 'Noto', sans-serif;
-      -webkit-font-smoothing: antialiased;
-
+      @apply(--paper-font-common-base);
 
       font-size: 24px;
       font-weight: 400;
@@ -11961,14 +11948,8 @@ if (!window.Promise) {
     };
 
     --paper-font-title: {
-      /* @apply(--paper-font-common-base) */
-      font-family: 'Roboto', 'Noto', sans-serif;
-      -webkit-font-smoothing: antialiased;
-
-      /* @apply(--paper-font-common-nowrap); */
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      @apply(--paper-font-common-base);
+      @apply(--paper-font-common-nowrap);
 
       font-size: 20px;
       font-weight: 500;
@@ -11976,10 +11957,7 @@ if (!window.Promise) {
     };
 
     --paper-font-subhead: {
-      /* @apply(--paper-font-common-base) */
-      font-family: 'Roboto', 'Noto', sans-serif;
-      -webkit-font-smoothing: antialiased;
-
+      @apply(--paper-font-common-base);
 
       font-size: 16px;
       font-weight: 400;
@@ -11987,9 +11965,7 @@ if (!window.Promise) {
     };
 
     --paper-font-body2: {
-      /* @apply(--paper-font-common-base) */
-      font-family: 'Roboto', 'Noto', sans-serif;
-      -webkit-font-smoothing: antialiased;
+      @apply(--paper-font-common-base);
 
       font-size: 14px;
       font-weight: 500;
@@ -11997,9 +11973,7 @@ if (!window.Promise) {
     };
 
     --paper-font-body1: {
-      /* @apply(--paper-font-common-base) */
-      font-family: 'Roboto', 'Noto', sans-serif;
-      -webkit-font-smoothing: antialiased;
+      @apply(--paper-font-common-base);
 
       font-size: 14px;
       font-weight: 400;
@@ -12007,13 +11981,8 @@ if (!window.Promise) {
     };
 
     --paper-font-caption: {
-      /* @apply(--paper-font-common-base) */
-      font-family: 'Roboto', 'Noto', sans-serif;
-      -webkit-font-smoothing: antialiased;
-      /* @apply(--paper-font-common-nowrap); */
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      @apply(--paper-font-common-base);
+      @apply(--paper-font-common-nowrap);
 
       font-size: 12px;
       font-weight: 400;
@@ -12022,14 +11991,8 @@ if (!window.Promise) {
     };
 
     --paper-font-menu: {
-      /* @apply(--paper-font-common-base) */
-      font-family: 'Roboto', 'Noto', sans-serif;
-      -webkit-font-smoothing: antialiased;
-
-      /* @apply(--paper-font-common-nowrap); */
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      @apply(--paper-font-common-base);
+      @apply(--paper-font-common-nowrap);
 
       font-size: 13px;
       font-weight: 500;
@@ -12037,14 +12000,8 @@ if (!window.Promise) {
     };
 
     --paper-font-button: {
-      /* @apply(--paper-font-common-base) */
-      font-family: 'Roboto', 'Noto', sans-serif;
-      -webkit-font-smoothing: antialiased;
-
-      /* @apply(--paper-font-common-nowrap); */
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      @apply(--paper-font-common-base);
+      @apply(--paper-font-common-nowrap);
 
       font-size: 14px;
       font-weight: 500;
@@ -12054,9 +12011,7 @@ if (!window.Promise) {
     };
 
     --paper-font-code2: {
-      /* @apply(--paper-font-common-code); */
-      font-family: 'Roboto Mono', 'Consolas', 'Menlo', monospace;
-      -webkit-font-smoothing: antialiased;
+      @apply(--paper-font-common-code);
 
       font-size: 14px;
       font-weight: 700;
@@ -12064,9 +12019,7 @@ if (!window.Promise) {
     };
 
     --paper-font-code1: {
-      /* @apply(--paper-font-common-code); */
-      font-family: 'Roboto Mono', 'Consolas', 'Menlo', monospace;
-      -webkit-font-smoothing: antialiased;
+      @apply(--paper-font-common-code);
 
       font-size: 14px;
       font-weight: 500;
@@ -12585,7 +12538,7 @@ styles. All other styles should exist as single lines."
 
 .paper-font-code1 {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 20px;
 }
 
@@ -13113,7 +13066,6 @@ context. You should place this element as a child of `<body>` whenever possible.
     },
 
     listeners: {
-      'tap': '_onClick',
       'iron-resize': '_onIronResize'
     },
 
@@ -13135,6 +13087,10 @@ context. You should place this element as a child of `<body>` whenever possible.
 
     ready: function() {
       this._ensureSetup();
+    },
+
+    attached: function() {
+      // Call _openedChanged here so that position can be computed correctly.
       if (this._callOpenedWhenReady) {
         this._openedChanged();
       }
@@ -13366,20 +13322,10 @@ context. You should place this element as a child of `<body>` whenever possible.
     },
 
     _onCaptureClick: function(event) {
-      // attempt to close asynchronously and prevent the close of a tap event is immediately heard
-      // on target. This is because in shadow dom due to event retargetting event.target is not
-      // useful.
-      if (!this.noCancelOnOutsideClick && (this._manager.currentOverlay() == this)) {
-        this._cancelJob = this.async(function() {
-          this.cancel();
-        }, 10);
-      }
-    },
-
-    _onClick: function(event) {
-      if (this._cancelJob) {
-        this.cancelAsync(this._cancelJob);
-        this._cancelJob = null;
+      if (!this.noCancelOnOutsideClick &&
+          this._manager.currentOverlay() === this &&
+          Polymer.dom(event).path.indexOf(this) === -1) {
+        this.cancel();
       }
     },
 
@@ -13388,6 +13334,7 @@ context. You should place this element as a child of `<body>` whenever possible.
       if (!this.noCancelOnEscKey && (event.keyCode === ESC)) {
         this.cancel();
         event.stopPropagation();
+        event.stopImmediatePropagation();
       }
     },
 
@@ -14628,11 +14575,22 @@ module.exports = Array.isArray || function (arr) {
     }
 
     function setPageTitle(route) {
-      app.appParams.menu.forEach(function(elem) {
-        if (elem.url === route) {
-          app.pageTitle = elem.text;
-        }
-      });
+      if (app.appParams) {
+        app.appParams.menu.forEach(function(elem) {
+          if (elem.url === route) {
+            app.pageTitle = elem.text;
+          }
+        });
+      } else {
+        // iron-ajax bug in Firefox
+        //
+        var detectLangAjax = Polymer.dom(document).querySelector('#detect-language-ajax');
+        detectLangAjax.addEventListener('response', function(e) {
+          var params = e.detail.response;
+          app.appParams = params;
+          setPageTitle(route);
+        });
+      }
     }
 
     // Routes
@@ -14689,13 +14647,13 @@ module.exports = Array.isArray || function (arr) {
     });
 
     /*page('/users', function() {
-      app.route = 'users';
-    });
+     app.route = 'users';
+     });
 
-    page('/users/:name', function(data) {
-      app.route = 'user-info';
-      app.params = data.params;
-    });*/
+     page('/users/:name', function(data) {
+     app.route = 'user-info';
+     app.params = data.params;
+     });*/
 
     // 404
     page('*', function() {
@@ -18194,6 +18152,10 @@ module.exports = Array.isArray || function (arr) {
         cursor: auto;
         @apply(--paper-icon-button-disabled);
       }
+      
+      :host(:hover) { 
+        @apply(--paper-icon-button-hover);
+      }
 
       iron-icon {
         --iron-icon-width: 100%;
@@ -18259,30 +18221,39 @@ module.exports = Array.isArray || function (arr) {
     <style>
       :host {
         display: block;
+        position: relative;
         min-height: var(--paper-item-min-height, 48px);
         padding: 0px 16px;
       }
 
+      :host([hidden]) {
+        display: none !important;
+      }
+
       :host(.iron-selected) {
         font-weight: var(--paper-item-selected-weight, bold);
+
         @apply(--paper-item-selected);
       }
 
       :host([disabled]) {
         color: var(--paper-item-disabled-color, --disabled-text-color);
+
         @apply(--paper-item-disabled);
       }
 
       :host(:focus) {
         position: relative;
         outline: 0;
+
         @apply(--paper-item-focused);
       }
 
       :host(:focus):before {
         @apply(--layout-fit);
-        content: '';
+
         background: currentColor;
+        content: '';
         opacity: var(--dark-divider-opacity);
         pointer-events: none;
 
@@ -18331,9 +18302,10 @@ module.exports = Array.isArray || function (arr) {
       }
 
       .content-icon {
-        width: var(--paper-item-icon-width, 56px);
         @apply(--layout-horizontal);
         @apply(--layout-center);
+
+        width: var(--paper-item-icon-width, 56px);
       }
     </style>
 
@@ -18372,14 +18344,15 @@ module.exports = Array.isArray || function (arr) {
       }
 
       :host > ::content > * {
-        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
       :host > ::content [secondary] {
-        color: var(--paper-item-body-secondary-color, --secondary-text-color);
         @apply(--paper-font-body1);
+
+        color: var(--paper-item-body-secondary-color, --secondary-text-color);
 
         @apply(--paper-item-body-secondary);
       }
@@ -18394,16 +18367,12 @@ module.exports = Array.isArray || function (arr) {
     });
   </script>
 </dom-module>
-<dom-module id="paper-material" assetpath="../bower_components/paper-material/">
+<dom-module id="paper-material-shared-styles" assetpath="../bower_components/paper-material/">
   <template>
     <style>
       :host {
         display: block;
         position: relative;
-      }
-
-      :host([animated]) {
-        @apply(--shadow-transition);
       }
 
       :host([elevation="1"]) {
@@ -18424,6 +18393,16 @@ module.exports = Array.isArray || function (arr) {
 
       :host([elevation="5"]) {
         @apply(--shadow-elevation-16dp);
+      }
+    </style>
+  </template>
+</dom-module>
+<dom-module id="paper-material" assetpath="../bower_components/paper-material/">
+  <template>
+    <style include="paper-material-shared-styles"></style>
+    <style>
+      :host([animated]) {
+        @apply(--shadow-transition);
       }
     </style>
 
@@ -18729,16 +18708,6 @@ module.exports = Array.isArray || function (arr) {
         value: 0
       },
 
-      _prevScrollTop: {
-        type: Number,
-        value: 0
-      },
-
-      _y: {
-        type: Number,
-        value: 0
-      },
-
       /** @type {number|null} */
       _defaultCondsensedHeaderHeight: {
         type: Number,
@@ -18758,9 +18727,12 @@ module.exports = Array.isArray || function (arr) {
     },
 
     ready: function() {
-      this.async(this.measureHeaderHeight, 5);
       this._scrollHandler = this._scroll.bind(this);
       this.scroller.addEventListener('scroll', this._scrollHandler);
+    },
+
+    attached: function() {
+      this.async(this.measureHeaderHeight, 1);
     },
 
     /**
@@ -19004,9 +18976,13 @@ module.exports = Array.isArray || function (arr) {
 
       if (y > this._headerMaxDelta) {
         y = this._headerMaxDelta;
-        this._setHeaderState(ctx.HEADER_STATE_HIDDEN);
 
-      } else if (this.condenses && this._prevScrollTop >= scrollTop && scrollTop >= this._headerMargin) {
+        if (this.keepCondensedHeader) {
+          this._setHeaderState(ctx.HEADER_STATE_CONDENSED);
+        } else {
+          this._setHeaderState(ctx.HEADER_STATE_HIDDEN);
+        }
+      } else if (this.condenses && scrollTop >= this._headerMargin) {
         y = Math.max(y, this._headerMargin);
         this._setHeaderState(ctx.HEADER_STATE_CONDENSED);
 
@@ -20059,6 +20035,8 @@ module.exports = Array.isArray || function (arr) {
         } else if (alignBottom) {
           return 'align-bottom';
         }
+
+        return '';
       },
 
       // TODO(cdata): Add `track` response back in when gesture lands.

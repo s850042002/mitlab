@@ -33,11 +33,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     function setPageTitle(route) {
-      app.appParams.menu.forEach(function(elem) {
-        if (elem.url === route) {
-          app.pageTitle = elem.text;
-        }
-      });
+      if (app.appParams) {
+        app.appParams.menu.forEach(function(elem) {
+          if (elem.url === route) {
+            app.pageTitle = elem.text;
+          }
+        });
+      } else {
+        // iron-ajax bug in Firefox
+        //
+        var detectLangAjax = Polymer.dom(document).querySelector('#detect-language-ajax');
+        detectLangAjax.addEventListener('response', function(e) {
+          var params = e.detail.response;
+          app.appParams = params;
+          setPageTitle(route);
+        });
+      }
     }
 
     // Routes
@@ -94,13 +105,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     });
 
     /*page('/users', function() {
-      app.route = 'users';
-    });
+     app.route = 'users';
+     });
 
-    page('/users/:name', function(data) {
-      app.route = 'user-info';
-      app.params = data.params;
-    });*/
+     page('/users/:name', function(data) {
+     app.route = 'user-info';
+     app.params = data.params;
+     });*/
 
     // 404
     page('*', function() {
