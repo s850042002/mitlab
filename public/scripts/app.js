@@ -1,1 +1,101 @@
-!function(e){"use strict";var a=e.querySelector("#app");a.baseUrl="/",""===window.location.port,a.displayInstalledToast=function(){Polymer.dom(e).querySelector("platinum-sw-cache").disabled||Polymer.dom(e).querySelector("#caching-complete").show()},a.addEventListener("dom-change",function(){console.log("Our app is ready to rock!")}),window.addEventListener("WebComponentsReady",function(){var r=Polymer.dom(e).querySelector("#switch-language-button"),o=Polymer.dom(e).querySelector("#switch-language-ajax");r.addEventListener("click",function(){a.appParams.language="en-US"===a.appParams.language?"zh-TW":"en-US";var e={lang:a.appParams.language};o.params=e,o.generateRequest()}),o.addEventListener("response",function(e){var r=e.detail.response;a.appParams=r,a.appParams.menu.forEach(function(e){e.url===a.route&&(a.pageTitle=e.text)})})}),window.addEventListener("paper-header-transform",function(a){var r=Polymer.dom(e).querySelector("#mainToolbar .app-name"),o=Polymer.dom(e).querySelector("#mainToolbar .middle-container"),n=Polymer.dom(e).querySelector("#mainToolbar .bottom-container"),t=a.detail,l=t.height-t.condensedHeight,s=Math.min(1,t.y/l),c=.5,i=l-t.y,m=l/(1-c),d=Math.max(c,i/m+c),u=1-s;Polymer.Base.transform("translate3d(0,"+100*s+"%,0)",o),Polymer.Base.transform("scale("+u+") translateZ(0)",n),Polymer.Base.transform("scale("+d+") translateZ(0)",r)}),a.scrollPageToTop=function(){a.$.headerPanelMain.scrollToTop(!0)},a.closeDrawer=function(){a.$.paperDrawerPanel.closeDrawer()}}(document);
+/*
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+*/
+
+(function(document) {
+  'use strict';
+
+  // Grab a reference to our auto-binding template
+  // and give it some initial binding values
+  // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
+  var app = document.querySelector('#app');
+
+  // Sets app default base URL
+  app.baseUrl = '/';
+  if (window.location.port === '') {  // if production
+    // Uncomment app.baseURL below and
+    // set app.baseURL to '/your-pathname/' if running from folder in production
+    // app.baseUrl = '/polymer-starter-kit/';
+  }
+
+  app.displayInstalledToast = function() {
+    // Check to make sure caching is actually enabled—it won't be in the dev environment.
+    if (!Polymer.dom(document).querySelector('platinum-sw-cache').disabled) {
+      Polymer.dom(document).querySelector('#caching-complete').show();
+    }
+  };
+
+  // Listen for template bound event to know when bindings
+  // have resolved and content has been stamped to the page
+  app.addEventListener('dom-change', function() {
+    console.log('Our app is ready to rock!');
+  });
+
+  // See https://github.com/Polymer/polymer/issues/1381
+  window.addEventListener('WebComponentsReady', function() {
+    // imports are loaded and elements have been registered
+
+    var switchLangButton = Polymer.dom(document).querySelector('#switch-language-button');
+    var switchLangAjax = Polymer.dom(document).querySelector('#switch-language-ajax');
+
+    switchLangButton.addEventListener('click', function() {
+      app.appParams.language = (app.appParams.language === 'en-US') ? 'zh-TW' : 'en-US';
+      var data = {'lang': app.appParams.language};
+      switchLangAjax.params = data;
+      switchLangAjax.generateRequest();
+    });
+
+    switchLangAjax.addEventListener('response', function(e) {
+      var params = e.detail.response;
+      app.appParams = params;
+      app.appParams.menu.forEach(function(elem) {
+        if (elem.url === app.route) {
+          app.pageTitle = elem.text;
+        }
+      });
+    });
+  });
+
+  // Main area's paper-scroll-header-panel custom condensing transformation of
+  // the appName in the middle-container and the bottom title in the bottom-container.
+  // The appName is moved to top and shrunk on condensing. The bottom sub title
+  // is shrunk to nothing on condensing.
+  window.addEventListener('paper-header-transform', function(e) {
+    var appName = Polymer.dom(document).querySelector('#mainToolbar .app-name');
+    var middleContainer = Polymer.dom(document).querySelector('#mainToolbar .middle-container');
+    var bottomContainer = Polymer.dom(document).querySelector('#mainToolbar .bottom-container');
+    var detail = e.detail;
+    var heightDiff = detail.height - detail.condensedHeight;
+    var yRatio = Math.min(1, detail.y / heightDiff);
+    // appName max size when condensed. The smaller the number the smaller the condensed size.
+    var maxMiddleScale = 0.50;
+    var auxHeight = heightDiff - detail.y;
+    var auxScale = heightDiff / (1 - maxMiddleScale);
+    var scaleMiddle = Math.max(maxMiddleScale, auxHeight / auxScale + maxMiddleScale);
+    var scaleBottom = 1 - yRatio;
+
+    // Move/translate middleContainer
+    Polymer.Base.transform('translate3d(0,' + yRatio * 100 + '%,0)', middleContainer);
+
+    // Scale bottomContainer and bottom sub title to nothing and back
+    Polymer.Base.transform('scale(' + scaleBottom + ') translateZ(0)', bottomContainer);
+
+    // Scale middleContainer appName
+    Polymer.Base.transform('scale(' + scaleMiddle + ') translateZ(0)', appName);
+  });
+
+  // Scroll page to top and expand header
+  app.scrollPageToTop = function() {
+    app.$.headerPanelMain.scrollToTop(true);
+  };
+
+  app.closeDrawer = function() {
+    app.$.paperDrawerPanel.closeDrawer();
+  };
+
+})(document);
