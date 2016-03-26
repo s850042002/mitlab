@@ -1,20 +1,36 @@
-# **mitlab**
----
+mitlab
+==
 
 ##**Prerequisite**
-**install nodeJS**<br>
-http://nodejs.org/<br><br>
-**install bower**<br>
+**install nodeJS**
+http://nodejs.org/
+
+**install bower**
 `npm install -g bower`
+
 ##**How to build it**
-**Step 1.<br>**
-`git clone https://github.com/s850042002/mitlab.git`<br><br>
-**Step 2.<br>**Inside the directory and <br>
-`npm install`<br><br>
-**Step 3.<br>** go to the `public` directory and <br>
-`bower install`<br><br>
-**Step 4.<br>** Start the web<br>
+**Step 1.**
+
+`git clone https://github.com/s850042002/mitlab.git`
+
+**Step 2.**
+
+Inside the directory and
+
+`npm install`
+
+**Step 3.**
+
+go to the `public` directory and
+
+`bower install`
+
+
+**Step 4.**
+
+ Start the web
+
 `node bin/www`
 
-####It works.<br>
-http://localhost:3000
+####It works.
+http://localhost
