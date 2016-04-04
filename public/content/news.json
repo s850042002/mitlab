@@ -1,4 +1,39 @@
-[
+[ 
+  {
+    "zh-TW" : "恭賀！呂政修老師 榮獲 台灣科技大學 104學年度優良研究及創作獎！",
+    "en-US" : "Teacher Leu was rewarded NTUST Excellent Research Award for the Semester Year-104",
+    "time" : "2016/03/17"
+  },
+  { 
+    "zh-TW" : "賀！呂政修老師指導學生 饒志鴻、陳智峰參加「第二屆創意智慧生活競賽」以「NFC智慧藥盒」榮獲健康照護組第三名！",
+    "en-US" : "The students Chih Hung, Chih Feng, were rewarded Third Place by NFC Intelligent Medicine Dispenser in 2016 SIGMU Intelligent Competition",
+    "time" : "2015/03/06"
+  },
+  { 
+    "zh-TW" : "賀！呂政修老師指導學生 蘇冠武、邱靖倢、王秉軒、許任捷、楊程皓參加「2015第六屆校園創意創業競賽」以「在地A腳步」榮獲專利商品化第一名！",
+    "en-US" : "The students Thomas Leonard Su, Ryan Chiu, Bing Syuan, Ren Chieh, Cheng Hao, were rewarded First Place by 在地A腳步 in 2015 Innovation & Entrepreneurship Competition",
+    "time" : "2015/12/10"
+  },
+  { 
+    "zh-TW" : "賀！呂政修老師指導學生 邱靖倢、邱昶學、王紫綺、許任捷參加「2015第20屆全國大專校院資訊應用服務創新競賽」以「Fooney即食」榮獲智慧型手持裝置兩岸交流應用組佳作！",
+    "en-US" : "The students Ryan Chiu, Michael Chiu, Tz Chi, Ren Chieh, were rewarded Second Award by Fooney in International ICT Innovative Services Awards 2015",
+    "time" : "2015/10/31"
+  },
+  { 
+    "zh-TW" : "賀！呂政修老師指導學生 程文志、饒志鴻、邱靖倢、許任捷參加「2015第20屆全國大專校院資訊應用服務創新競賽」以「NumberCatcher-智慧型排隊系統」榮獲智慧型手持裝置兩岸交流應用組佳作！",
+    "en-US" : "The students Wen Chih, Chih Hung, Ryan Chiu, Ren Chieh, were rewarded Excellent Award by NumberCatcher in International ICT Innovative Services Awards 2015",
+    "time" : "2015/10/31"
+  },
+  { 
+    "zh-TW" : "賀！呂政修老師指導 學生王秉軒、邱靖倢、陳聖凱、吳勇霆、許任捷參加「2015第20屆全國大專校院資訊應用服務創新競賽」以「iAngel 愛的天使」榮獲智慧型手持裝置兩岸交流應用組佳作！",
+    "en-US" : "The students Bing Syuan, Ryan Chiu, Yong Ting, Sheng Kai, Ren Chieh, were rewarded Excellent Award by iAngel in International ICT Innovative Services Awards 2015",
+    "time" : "2015/10/31"
+  },
+  { 
+    "zh-TW" : "賀！呂政修老師 指導 學生 蘇冠武、游敏杰、江東鴻 參加「2015 MATLAB/Simulink技術與應用文章/論文徵選」 以「Prolonging the Lifetime of WiNeMO with Isolated Node Problem Using Energy Efficient Clustering Scheme」獲得優選第二名！",
+    "en-US" : "The students Thomas Leonard Su, Min Chieh Yu, Dong Hong, were rewarded Second Award by Prolonging the Lifetime of WiNeMO with Isolated Node Problem Using Energy Efficient Clustering Scheme in 2015 MATLAB & Simulink Tech Forum and Expo",
+    "time" : "2015/10/21"
+  },
   { 
     "zh-TW" : "賀！本實驗室 碩士生邱靖倢 獲選 北區技專院校教學資源中心「103學年度北區傑出教學助理」！",
     "en-US" : "Ryan Chiu, the graduate student, was rewarded Exceptional Teacher Assistant by CTLE in Northern Region, Ministry of Education.",
