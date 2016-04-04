@@ -1,5 +1,9 @@
 [
   {
+    "papername" : " M.-Y. Wu, M.-C. Yu, J.-S. Leu, and S.-K. Chen, “Improving Security and Privacy of Images on Cloud Storage by Histogram Shifting and Secret Sharing,” The 83th IEEE Vehicular Technology Conference (IEEE VTC 2016 Spring), May 2016, Nanjing, China, May 15–18, 2016.",
+  "type" : "conference"
+  },
+  {
     "papername" : "Y.-T. Wu, M.-C. Yu, J.-S. Leu, E.-C. Lee and T. Song, “Design and Implementation of Various File Deduplication Schemes on Storage Devices,” 11th EAI International Conference on Heterogeneous Networking for Quality, Reliability, Security and Robustness (QShine 2015), Taipei, Taiwan, pp. xxx-xxx, Aug. 19-20 2015. ",
   "type" : "conference"
   },
