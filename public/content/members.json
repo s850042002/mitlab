@@ -24,6 +24,14 @@
     "other" : ""
   },
   {
+    "name" : "徐家銘",
+    "email" : "@mail.ntust.edu.tw",
+    "id" : "master",
+    "avatar" : "images/avatar-06.svg",
+    "year" : "104",
+    "other" : ""
+  },
+  {
     "name" : "Jaime Mora",
     "email" : "M9802804@mail.ntust.edu.tw",
     "id" : "ms-students",
@@ -172,6 +180,22 @@
     "email" : "B10002012@mail.ntust.edu.tw",
     "id" : "ms-students",
     "avatar" : "images/avatar-09.svg",
+    "year" : "104",
+    "other" : ""
+  },
+  {
+    "name" : "饒志鴻",
+    "email" : "B10102029@mail.ntust.edu.tw",
+    "id" : "ms-students",
+    "avatar" : "images/avatar-03.svg",
+    "year" : "104",
+    "other" : ""
+  },
+  {
+    "name" : "Vincent Utomo",
+    "email" : "@mail.ntust.edu.tw",
+    "id" : "ms-students",
+    "avatar" : "images/avatar-08.svg",
     "year" : "104",
     "other" : ""
   },
@@ -381,7 +405,7 @@
     "id" : "graduated",
     "avatar" : "images/avatar-07.svg",
     "year" : "103碩士畢",
-    "other" : "精誠資訊(SYSTEX)"
+    "other" : "華碩電腦(ASUS)"
   },
   {
     "name" : "吳旻穎",
