@@ -74,7 +74,7 @@
   {
     "name" : "詹佳芸",
     "email" : "erti627@hotmail.com",
-    "id" : "ms-students",
+    "id" : "graduated",
     "avatar" : "images/avatar-10.svg",
     "year" : "102",
     "other" : ""
@@ -82,7 +82,7 @@
   {
     "name" : "吳勇霆",
     "email" : "yotiwu@gmail.com",
-    "id" : "ms-students",
+    "id" : "graduated",
     "avatar" : "images/avatar-11.svg",
     "year" : "103",
     "other" : ""
@@ -98,7 +98,7 @@
   {
     "name" : "陳聖凱",
     "email" : "M10302147@mail.ntust.edu.tw",
-    "id" : "ms-students",
+    "id" : "graduated",
     "avatar" : "images/avatar-13.svg",
     "year" : "103",
     "other" : ""
@@ -106,7 +106,7 @@
   {
     "name" : "許梓垣",
     "email" : "appement@hotmail.com",
-    "id" : "ms-students",
+    "id" : "graduated",
     "avatar" : "images/avatar-14.svg",
     "year" : "103",
     "other" : ""
@@ -114,7 +114,7 @@
   {
     "name" : "王秉軒",
     "email" : "cgjhtcssh@hotmail.com",
-    "id" : "ms-students",
+    "id" : "graduated",
     "avatar" : "images/avatar-15.svg",
     "year" : "103",
     "other" : ""
