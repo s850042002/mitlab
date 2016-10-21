@@ -76,7 +76,7 @@
     "email" : "erti627@hotmail.com",
     "id" : "graduated",
     "avatar" : "images/avatar-10.svg",
-    "year" : "102",
+    "year" : "104碩士畢",
     "other" : ""
   },
   {
@@ -84,7 +84,7 @@
     "email" : "yotiwu@gmail.com",
     "id" : "graduated",
     "avatar" : "images/avatar-11.svg",
-    "year" : "103",
+    "year" : "104碩士畢",
     "other" : ""
   },
   {
@@ -92,7 +92,7 @@
     "email" : "M10302102@mail.ntust.edu.tw",
     "id" : "ms-students",
     "avatar" : "images/avatar-12.svg",
-    "year" : "103",
+    "year" : "104碩士畢",
     "other" : ""
   },
   {
@@ -100,7 +100,7 @@
     "email" : "M10302147@mail.ntust.edu.tw",
     "id" : "graduated",
     "avatar" : "images/avatar-13.svg",
-    "year" : "103",
+    "year" : "104碩士畢",
     "other" : ""
   },
   {
@@ -108,7 +108,7 @@
     "email" : "appement@hotmail.com",
     "id" : "graduated",
     "avatar" : "images/avatar-14.svg",
-    "year" : "103",
+    "year" : "104碩士畢",
     "other" : ""
   },
   {
@@ -116,7 +116,7 @@
     "email" : "cgjhtcssh@hotmail.com",
     "id" : "graduated",
     "avatar" : "images/avatar-15.svg",
-    "year" : "103",
+    "year" : "104碩士畢",
     "other" : ""
   },
   {
@@ -132,7 +132,7 @@
     "email" : "reza_shiftup@yahoo.com",
     "id" : "ms-students",
     "avatar" : "images/avatar-02.svg",
-    "year" : "103",
+    "year" : "104碩士畢",
     "other" : ""
   },
   {
@@ -165,14 +165,6 @@
     "id" : "ms-students",
     "avatar" : "images/avatar-06.svg",
     "year" : "104",
-    "other" : ""
-  },
-  {
-    "name" : "謝禾彥",
-    "email" : "m10502153@mail.ntust.edu.tw",
-    "id" : "ms-students",
-    "avatar" : "images/avatar-06.svg",
-    "year" : "105",
     "other" : ""
   },
   {
@@ -422,5 +414,53 @@
     "avatar" : "images/avatar-06.svg",
     "year" : "103碩士畢",
     "other" : "華碩電腦(ASUS)"
+  },
+  {
+    "name" : "謝禾彥",
+    "email" : "m10502153@mail.ntust.edu.tw",
+    "id" : "ms-students",
+    "avatar" : "images/avatar-06.svg",
+    "year" : "105",
+    "other" : ""
+  },
+  {
+    "name" : "蔡佾勳",
+    "email" : "m10502116@mail.ntust.edu.tw",
+    "id" : "ms-students",
+    "avatar" : "images/avatar-04.svg",
+    "year" : "105",
+    "other" : ""
+  },
+  {
+    "name" : "洪嘉男",
+    "email" : "m10502102@mail.ntust.edu.tw",
+    "id" : "ms-students",
+    "avatar" : "images/avatar-02.svg",
+    "year" : "105",
+    "other" : ""
+  },
+  {
+    "name" : "王翊帆",
+    "email" : "m10502133@mail.ntust.edu.tw",
+    "id" : "ms-students",
+    "avatar" : "images/avatar-04.svg",
+    "year" : "105",
+    "other" : ""
+  },
+  {
+    "name" : "董祐瑋",
+    "email" : "m10502118@mail.ntust.edu.tw",
+    "id" : "ms-students",
+    "avatar" : "images/avatar-04.svg",
+    "year" : "105",
+    "other" : ""
+  },
+  {
+    "name" : "陳柏翰",
+    "email" : "bightp@gmail.com",
+    "id" : "ms-students",
+    "avatar" : "images/avatar-04.svg",
+    "year" : "105",
+    "other" : ""
   }
 ]
