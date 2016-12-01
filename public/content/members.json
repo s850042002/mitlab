@@ -34,7 +34,7 @@
   {
     "name" : "Jaime Mora",
     "email" : "M9802804@mail.ntust.edu.tw",
-    "id" : "ms-students",
+    "id" : "graduated",
     "avatar" : "images/avatar-02.svg",
     "year" : "98",
     "other" : ""
@@ -50,7 +50,7 @@
   {
     "name" : "周楹彬",
     "email" : "jouyingbin@gmail.com",
-    "id" : "ms-students",
+    "id" : "graduated",
     "avatar" : "images/avatar-07.svg",
     "year" : "100",
     "other" : "美商台灣網威股份有限公司 (Novell Corp.)"
@@ -58,7 +58,7 @@
   {
     "name" : "陳柏全",
     "email" : "M10202101@mail.ntust.edu.tw",
-    "id" : "ms-students",
+    "id" : "graduated",
     "avatar" : "images/avatar-08.svg",
     "year" : "102",
     "other" : ""
