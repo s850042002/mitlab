@@ -1,0 +1,482 @@
+[
+  {
+    "name": "林傳根",
+    "email": "M9602122@mail.ntust.edu.tw",
+    "id": "graduated",
+    "avatar": "images/avatar-03.svg",
+    "year": "97碩士畢",
+    "other": ""
+  },
+  {
+    "name": "黃銘宏",
+    "email": "M9602124@mail.ntust.edu.tw",
+    "id": "graduated",
+    "avatar": "images/avatar-04.svg",
+    "year": "97碩士畢",
+    "other": ""
+  },
+  {
+    "name": "蔡承衛",
+    "email": "wesley.tsai@mstarsemi.com",
+    "id": "graduated",
+    "avatar": "images/avatar-14.svg",
+    "year": "97碩士畢",
+    "other": ""
+  },
+  {
+    "name": "Jaime Mora",
+    "email": "M9802804@mail.ntust.edu.tw",
+    "id": "graduated",
+    "avatar": "images/avatar-02.svg",
+    "year": "98",
+    "other": ""
+  },
+  {
+    "name": "陳聖甫",
+    "email": "neskchen@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-05.svg",
+    "year": "98碩士畢",
+    "other": "瑞昱半導體 (Realtek)"
+  },
+  {
+    "name": "俞詠善",
+    "email": "polabear8587@hotmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-06.svg",
+    "year": "98碩士畢",
+    "other": ""
+  },
+  {
+    "name": "曾泓傑",
+    "email": "hungchein@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-09.svg",
+    "year": "98碩士畢",
+    "other": "華碩電腦(ASUS)"
+  },
+  {
+    "name": "林暐翔",
+    "email": "link3233@yahoo.com.tw",
+    "id": "master",
+    "avatar": "images/avatar-03.svg",
+    "year": "99",
+    "other": ""
+  },
+  {
+    "name": "岳孝權",
+    "email": "yueh.frank@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-07.svg",
+    "year": "99碩士畢",
+    "other": "鈊象電子(IGS)"
+  },
+  {
+    "name": "陳威霖",
+    "email": "waylingii@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-08.svg",
+    "year": "99碩士畢",
+    "other": "達創科技(DNI)"
+  },
+  {
+    "name": "游敏杰",
+    "email": "D10002103@mail.ntust.edu.tw",
+    "id": "master",
+    "avatar": "images/avatar-04.svg",
+    "year": "100",
+    "other": ""
+  },
+  {
+    "name": "呂定宸",
+    "email": "M10002907@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-06.svg",
+    "year": "100",
+    "other": "和碩聯合科技股份有限公司 (PEGATRON Corp.)"
+  },
+  {
+    "name": "周楹彬",
+    "email": "jouyingbin@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-07.svg",
+    "year": "100",
+    "other": "美商台灣網威股份有限公司 (Novell Corp.)"
+  },
+  {
+    "name": "林木盛",
+    "email": "amoos.lin@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-02.svg",
+    "year": "100博士畢",
+    "other": "鶯歌高職"
+  },
+  {
+    "name": "石欣玉",
+    "email": "witvicky@hotmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-10.svg",
+    "year": "100碩士畢",
+    "other": "華視(CTS)"
+  },
+  {
+    "name": "陳政宗",
+    "email": "M9902131@mail.ntust.edu.tw",
+    "id": "graduated",
+    "avatar": "images/avatar-11.svg",
+    "year": "100碩士畢",
+    "other": "華碩電腦(ASUS)"
+  },
+  {
+    "name": "陳其灃",
+    "email": "ethan.cfchen@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-12.svg",
+    "year": "100碩士畢",
+    "other": "資策會(III)"
+  },
+  {
+    "name": "羅堅誌",
+    "email": "M9902124@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-12.svg",
+    "year": "100碩士畢",
+    "other": ""
+  },
+  {
+    "name": "N. H. TUNG",
+    "email": "tungmangdth3@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-13.svg",
+    "year": "100碩士畢",
+    "other": "台灣摩惟爾有限公司(Movial)"
+  },
+  {
+    "name": "蘇冠武",
+    "email": "D10102107@mail.ntust.edu.tw",
+    "id": "master",
+    "avatar": "images/avatar-05.svg",
+    "year": "101",
+    "other": ""
+  },
+  {
+    "name": "謝文彬",
+    "email": "D9802106@mail.ntust.edu.tw",
+    "id": "graduated",
+    "avatar": "images/avatar-16.svg",
+    "year": "101博士畢",
+    "other": "國安局"
+  },
+  {
+    "name": "林正宏",
+    "email": "sammie08802000@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-14.svg",
+    "year": "101碩士畢",
+    "other": "華擎科技(ASRock)"
+  },
+  {
+    "name": "陳政輝",
+    "email": "M9902146@mail.ntust.edu.tw",
+    "id": "graduated",
+    "avatar": "images/avatar-15.svg",
+    "year": "101碩士畢",
+    "other": ""
+  },
+  {
+    "name": "李坤翰",
+    "email": "kuenhanli@iii.org.tw",
+    "id": "graduated",
+    "avatar": "images/avatar-16.svg",
+    "year": "101碩士畢",
+    "other": "資策會(III)"
+  },
+  {
+    "name": "劉醇曜",
+    "email": "M10002123@mail.ntust.edu.tw",
+    "id": "graduated",
+    "avatar": "images/avatar-01.svg",
+    "year": "101碩士畢",
+    "other": ""
+  },
+  {
+    "name": "欒自雨",
+    "email": " rainluan@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-02.svg",
+    "year": "101碩士畢",
+    "other": ""
+  },
+  {
+    "name": "陳柏全",
+    "email": "M10202101@mail.ntust.edu.tw",
+    "id": "graduated",
+    "avatar": "images/avatar-08.svg",
+    "year": "102",
+    "other": ""
+  },
+  {
+    "name": "黃致嘉",
+    "email": "M10202102@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-09.svg",
+    "year": "102",
+    "other": ""
+  },
+  {
+    "name": "鄭自凱 William Cheng",
+    "email": "D9802106@mail.ntust.edu.tw",
+    "id": "graduated",
+    "avatar": "images/avatar-15.svg",
+    "year": "102博士畢",
+    "other": "台灣愛立信(Ericsson)"
+  },
+  {
+    "name": "朱哲儀",
+    "email": "pk2797001@hotmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-03.svg",
+    "year": "102碩士畢",
+    "other": "研華科技(Advantech)"
+  },
+  {
+    "name": "徐堃哲",
+    "email": "s850042002@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-04.svg",
+    "year": "102碩士畢",
+    "other": "嘉實資訊(SysJust)"
+  },
+  {
+    "name": "江東鴻",
+    "email": "pushadon@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-05.svg",
+    "year": "102碩士畢",
+    "other": "華碩電腦(ASUS)"
+  },
+  {
+    "name": "朱天瑜",
+    "email": "skytienyu@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-06.svg",
+    "year": "102碩士畢",
+    "other": "精誠資訊(SYSTEX)"
+  },
+  {
+    "name": "陳彥汝",
+    "email": "M10302154@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-16.svg",
+    "year": "103",
+    "other": ""
+  },
+  {
+    "name": "洪圳廷",
+    "email": "kurt.hung1224@gmail.com",
+    "id": "ms-students",
+    "avatar": "images/avatar-03.svg",
+    "year": "103",
+    "other": "和碩聯合科技股份有限公司(第五事業處軟體研發處)"
+  },
+  {
+    "name": "林宜誠",
+    "email": "joelin@cht.com.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-04.svg",
+    "year": "103",
+    "other": "中華電信股份有限公司(國際分公司行銷處一科)"
+  },
+  {
+    "name": "陳逸翔",
+    "email": "jeremy90122@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-07.svg",
+    "year": "103碩士畢",
+    "other": "華碩電腦(ASUS)"
+  },
+  {
+    "name": "吳旻穎",
+    "email": "houseuse616@hotmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-06.svg",
+    "year": "103碩士畢",
+    "other": "華碩電腦(ASUS)"
+  },
+  {
+    "name": "徐家銘",
+    "email": "@mail.ntust.edu.tw",
+    "id": "master",
+    "avatar": "images/avatar-06.svg",
+    "year": "104",
+    "other": ""
+  },
+  {
+    "name": "鄭宇辰",
+    "email": "",
+    "id": "ms-students",
+    "avatar": "images/avatar-05.svg",
+    "year": "104",
+    "other": ""
+  },
+  {
+    "name": "陳彥達",
+    "email": "B10002208@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-05.svg",
+    "year": "104",
+    "other": ""
+  },
+  {
+    "name": "許任捷",
+    "email": "ro77793@gmail.com",
+    "id": "ms-students",
+    "avatar": "images/avatar-06.svg",
+    "year": "104",
+    "other": ""
+  },
+  {
+    "name": "楊程皓",
+    "email": "charlie60507@yahoo.com.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-07.svg",
+    "year": "104",
+    "other": ""
+  },
+  {
+    "name": "張哲睿",
+    "email": "B10002012@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-09.svg",
+    "year": "104",
+    "other": ""
+  },
+  {
+    "name": "饒志鴻",
+    "email": "B10102029@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-03.svg",
+    "year": "104",
+    "other": ""
+  },
+  {
+    "name": "Vincent Utomo",
+    "email": "@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-08.svg",
+    "year": "104",
+    "other": ""
+  },
+  {
+    "name": "詹佳芸",
+    "email": "erti627@hotmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-10.svg",
+    "year": "104碩士畢",
+    "other": ""
+  },
+  {
+    "name": "吳勇霆",
+    "email": "yotiwu@gmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-11.svg",
+    "year": "104碩士畢",
+    "other": ""
+  },
+  {
+    "name": "邱靖倢",
+    "email": "M10302102@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-12.svg",
+    "year": "104碩士畢",
+    "other": ""
+  },
+  {
+    "name": "陳聖凱",
+    "email": "M10302147@mail.ntust.edu.tw",
+    "id": "graduated",
+    "avatar": "images/avatar-13.svg",
+    "year": "104碩士畢",
+    "other": ""
+  },
+  {
+    "name": "許梓垣",
+    "email": "appement@hotmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-14.svg",
+    "year": "104碩士畢",
+    "other": ""
+  },
+  {
+    "name": "王秉軒",
+    "email": "cgjhtcssh@hotmail.com",
+    "id": "graduated",
+    "avatar": "images/avatar-15.svg",
+    "year": "104碩士畢",
+    "other": ""
+  },
+  {
+    "name": "Reza",
+    "email": "reza_shiftup@yahoo.com",
+    "id": "ms-students",
+    "avatar": "images/avatar-02.svg",
+    "year": "104碩士畢",
+    "other": ""
+  },
+  {
+    "name": "謝禾彥",
+    "email": "m10502153@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-06.svg",
+    "year": "105",
+    "other": ""
+  },
+  {
+    "name": "蔡佾勳",
+    "email": "m10502116@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-04.svg",
+    "year": "105",
+    "other": ""
+  },
+  {
+    "name": "洪嘉男",
+    "email": "m10502102@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-02.svg",
+    "year": "105",
+    "other": ""
+  },
+  {
+    "name": "王翊帆",
+    "email": "m10502133@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-04.svg",
+    "year": "105",
+    "other": ""
+  },
+  {
+    "name": "董祐瑋",
+    "email": "m10502118@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-04.svg",
+    "year": "105",
+    "other": ""
+  },
+  {
+    "name": "陳柏翰",
+    "email": "bightp@gmail.com",
+    "id": "ms-students",
+    "avatar": "images/avatar-04.svg",
+    "year": "105",
+    "other": ""
+  },
+  {
+    "name": "劉景文",
+    "email": "u0252501@nkfust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-04.svg",
+    "year": "106",
+    "other": ""
+  }
+]
