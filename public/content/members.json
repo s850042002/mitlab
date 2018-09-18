@@ -90,7 +90,7 @@
   {
     "name": "呂定宸",
     "email": "M10002907@mail.ntust.edu.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-06.svg",
     "year": "100",
     "other": "和碩聯合科技股份有限公司 (PEGATRON Corp.)"
@@ -218,7 +218,7 @@
   {
     "name": "黃致嘉",
     "email": "M10202102@mail.ntust.edu.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-09.svg",
     "year": "102",
     "other": ""
@@ -266,7 +266,7 @@
   {
     "name": "陳彥汝",
     "email": "M10302154@mail.ntust.edu.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-16.svg",
     "year": "103",
     "other": ""
@@ -274,7 +274,7 @@
   {
     "name": "洪圳廷",
     "email": "kurt.hung1224@gmail.com",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-03.svg",
     "year": "103",
     "other": "和碩聯合科技股份有限公司(第五事業處軟體研發處)"
@@ -282,7 +282,7 @@
   {
     "name": "林宜誠",
     "email": "joelin@cht.com.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-04.svg",
     "year": "103",
     "other": "中華電信股份有限公司(國際分公司行銷處一科)"
@@ -306,7 +306,7 @@
   {
     "name": "徐家銘",
     "email": "@mail.ntust.edu.tw",
-    "id": "master",
+    "id": "graduated",
     "avatar": "images/avatar-06.svg",
     "year": "104",
     "other": ""
@@ -314,7 +314,7 @@
   {
     "name": "鄭宇辰",
     "email": "",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-05.svg",
     "year": "104",
     "other": ""
@@ -322,7 +322,7 @@
   {
     "name": "陳彥達",
     "email": "B10002208@mail.ntust.edu.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-05.svg",
     "year": "104",
     "other": ""
@@ -330,7 +330,7 @@
   {
     "name": "許任捷",
     "email": "ro77793@gmail.com",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-06.svg",
     "year": "104",
     "other": ""
@@ -338,7 +338,7 @@
   {
     "name": "楊程皓",
     "email": "charlie60507@yahoo.com.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-07.svg",
     "year": "104",
     "other": ""
@@ -346,7 +346,7 @@
   {
     "name": "張哲睿",
     "email": "B10002012@mail.ntust.edu.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-09.svg",
     "year": "104",
     "other": ""
@@ -354,7 +354,7 @@
   {
     "name": "饒志鴻",
     "email": "B10102029@mail.ntust.edu.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-03.svg",
     "year": "104",
     "other": ""
@@ -362,7 +362,7 @@
   {
     "name": "Vincent Utomo",
     "email": "@mail.ntust.edu.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-08.svg",
     "year": "104",
     "other": ""
@@ -386,7 +386,7 @@
   {
     "name": "邱靖倢",
     "email": "M10302102@mail.ntust.edu.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-12.svg",
     "year": "104碩士畢",
     "other": ""
@@ -418,7 +418,7 @@
   {
     "name": "Reza",
     "email": "reza_shiftup@yahoo.com",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-02.svg",
     "year": "104碩士畢",
     "other": ""
@@ -426,7 +426,7 @@
   {
     "name": "謝禾彥",
     "email": "m10502153@mail.ntust.edu.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-06.svg",
     "year": "105",
     "other": ""
@@ -434,7 +434,7 @@
   {
     "name": "蔡佾勳",
     "email": "m10502116@mail.ntust.edu.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-04.svg",
     "year": "105",
     "other": ""
@@ -442,7 +442,7 @@
   {
     "name": "洪嘉男",
     "email": "m10502102@mail.ntust.edu.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-02.svg",
     "year": "105",
     "other": ""
@@ -450,7 +450,7 @@
   {
     "name": "王翊帆",
     "email": "m10502133@mail.ntust.edu.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-04.svg",
     "year": "105",
     "other": ""
@@ -458,7 +458,7 @@
   {
     "name": "董祐瑋",
     "email": "m10502118@mail.ntust.edu.tw",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-04.svg",
     "year": "105",
     "other": ""
@@ -466,7 +466,7 @@
   {
     "name": "陳柏翰",
     "email": "bightp@gmail.com",
-    "id": "ms-students",
+    "id": "graduated",
     "avatar": "images/avatar-04.svg",
     "year": "105",
     "other": ""
@@ -478,5 +478,38 @@
     "avatar": "images/avatar-12.svg",
     "year": "106",
     "other": ""
+  },
+  {
+    "name": "柯承佑",
+    "email": "m10502112@gapps.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-01.svg",
+    "year": "107",
+    "other": "I want to have a benz !"
+  },
+  {
+    "name": "黃品禎",
+    "email": "m10702134@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-02.svg",
+    "year": "107",
+    "other": ""
+  },
+  {
+    "name": "張譯勻",
+    "email": "M10702150@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-03.svg",
+    "year": "107",
+    "other": ""
+  },
+  {
+    "name": "楊士逸",
+    "email": "M10702117@mail.ntust.edu.tw",
+    "id": "ms-students",
+    "avatar": "images/avatar-04.svg",
+    "year": "107",
+    "other": ""
   }
+  
 ]
